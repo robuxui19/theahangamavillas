@@ -1,0 +1,1854 @@
+<!DOCTYPE html><!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Mon Mar 10 2025 12:18:37 GMT+0000 (Coordinated Universal Time)  -->
+<html data-wf-page="645c82bc49404a7d85aeb999" data-wf-site="645c82bc49404a7b02aeb995">
+<head>
+  <meta charset="utf-8">
+  <title>Style Guide</title>
+  <meta content="Style Guide" property="og:title">
+  <meta content="Style Guide" property="twitter:title">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="Webflow" name="generator">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="css/theahangamavillas.webflow.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+  <script type="text/javascript">WebFont.load({  google: {    families: ["Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic","Cormorant Garamond:regular,700"]  }});</script>
+  <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+  <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
+  <link href="images/webclip.png" rel="apple-touch-icon">
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="global-styles w-embed">
+      <style>
+/* CLIENT FIRST STYLES */
+/* Make text look crisper and more legible in all browsers */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+/* Focus state style for keyboard navigation for the focusable elements */
+*[tabindex]:focus-visible,
+  input[type="file"]:focus-visible {
+   outline: 0.125rem solid #4d65ff;
+   outline-offset: 0.125rem;
+}
+/* Get rid of top margin on first element in any rich text element */
+.w-richtext > :not(div):first-child, .w-richtext > div:first-child > :first-child {
+  margin-top: 0 !important;
+}
+/* Get rid of bottom margin on last element in any rich text element */
+.w-richtext>:last-child, .w-richtext ol li:last-child, .w-richtext ul li:last-child {
+	margin-bottom: 0 !important;
+}
+/* Prevent all click and hover interaction with an element */
+.pointer-events-off {
+	pointer-events: none;
+}
+/* Enables all click and hover interaction with an element */
+.pointer-events-on {
+  pointer-events: auto;
+}
+/* Create a class of .div-square which maintains a 1:1 dimension of a div */
+.div-square::after {
+	content: "";
+	display: block;
+	padding-bottom: 100%;
+}
+/* Make sure containers never lose their center alignment */
+.container-medium,.container-small, .container-large {
+	margin-right: auto !important;
+  margin-left: auto !important;
+}
+/* 
+Make the following elements inherit typography styles from the parent and not have hardcoded values. 
+Important: You will not be able to style for example "All Links" in Designer with this CSS applied.
+Uncomment this CSS to use it in the project. Leave this message for future hand-off.
+*/
+/*
+a,
+.w-input,
+.w-select,
+.w-tab-link,
+.w-nav-link,
+.w-dropdown-btn,
+.w-dropdown-toggle,
+.w-dropdown-link {
+  color: inherit;
+  text-decoration: inherit;
+  font-size: inherit;
+}
+*/
+/* Apply "..." after 3 lines of text */
+.text-style-3lines {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+}
+/* Apply "..." after 2 lines of text */
+.text-style-2lines {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+}
+/* Adds inline flex display */
+.display-inlineflex {
+  display: inline-flex;
+}
+/* These classes are never overwritten */
+.hide {
+  display: none !important;
+}
+@media screen and (max-width: 991px) {
+    .hide, .hide-tablet {
+        display: none !important;
+    }
+}
+  @media screen and (max-width: 767px) {
+    .hide-mobile-landscape{
+      display: none !important;
+    }
+}
+  @media screen and (max-width: 479px) {
+    .hide-mobile{
+      display: none !important;
+    }
+}
+.margin-0 {
+  margin: 0rem !important;
+}
+.padding-0 {
+  padding: 0rem !important;
+}
+.spacing-clean {
+padding: 0rem !important;
+margin: 0rem !important;
+}
+.margin-top {
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-top {
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
+}
+.margin-right {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-right {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+  padding-left: 0rem !important;
+}
+.margin-bottom {
+  margin-top: 0rem !important;
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-bottom {
+  padding-top: 0rem !important;
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+.margin-left {
+  margin-top: 0rem !important;
+  margin-right: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+.padding-left {
+  padding-top: 0rem !important;
+  padding-right: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+.margin-horizontal {
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+}
+.padding-horizontal {
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+.margin-vertical {
+  margin-right: 0rem !important;
+  margin-left: 0rem !important;
+}
+.padding-vertical {
+  padding-right: 0rem !important;
+  padding-left: 0rem !important;
+}
+/* CUSTOM STYLES */
+/* Removes webflow badge from staging site */
+.w-webflow-badge { display:none !important}
+/* This doesn't ignore the footer nav on iphones */  
+/* @media screen and (max-width: 478px) {
+  .section_hero {
+    min-height: -moz-available; 
+    min-height: -webkit-fill-available; 
+    min-height: fill-available;
+  } 
+}
+*/
+/* Normal List styling */
+/* This removes all list styling, including numbers */
+  ol {
+    list-style-type: none;
+    position: relative;
+  }
+  /* This forces the step counter below to start incrementing */
+  ol li {
+    counter-increment: step-counter;
+    padding-left: 12px; 
+  }
+  /* This adds a step counter before each list item in a numbered list. Also includes styling for the numbers */
+  ol li::before {
+    content: counter(step-counter);
+    position: absolute;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 700;
+    background-color: #0C0C0C;
+    border-radius: 24px;
+    text-align: center;
+    line-height: 26px;
+    margin-top: 0;
+  }
+ul {
+    list-style-type: none;
+    position: relative;
+  }
+ul li::before {
+    content: "◼︎";
+    color: #0C0C0C;
+    position: absolute;
+    left: 4px;
+    width: 100px;
+    height: 12px;
+    font-size: 16px;    
+  }  
+ul li {
+	padding-left: 8px;
+}
+/* Style select boxes */ 
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-border-radius: 0;
+  border: 0;
+}
+svg {display: block;}
+/* Remove lightbox strip */ 
+.w-lightbox-strip {display:none;}
+.w-lightbox-group, .w-lightbox-group .w-lightbox-view, .w-lightbox-group .w-lightbox-view:before {height:100vh;}
+.w-lightbox-content {margin-top:0vh;}
+/* Hide headings */ 
+.visuallyhidden {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+    clip-path: inset(0px 0px 99.9% 99.9%);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+ }
+ /* Loading spinner */
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 0.5s linear infinite;
+}
+.loader::after {
+    content: '';  
+  	box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    border-bottom-color: var(--white);
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+ /* Balanced text */
+.text-balance {text-wrap:balance;}
+</style>
+    </div>
+    <div class="fs-styleguide_component">
+      <header class="fs-styleguide_header">
+        <div class="padding-section-large">
+          <div class="padding-global">
+            <div class="container-large">
+              <div class="fs-styleguide_header-block">
+                <a href="https://client-first.webflow.io/" target="_blank" class="fs-styleguide_version">Style Guide</a>
+                <h1 class="fs-styleguide_heading-large">The Ahangama Villas</h1>
+                <div class="max-width-medium">
+                  <p>Client-First is a set of guidelines and strategies created by Finsweet to help you build Webflow websites.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section class="fs-styleguide_classes">
+        <section class="fs-styleguide_logo">
+          <div class="padding-section-large">
+            <div class="padding-global">
+              <div class="container-large">
+                <div class="fs-styleguide_section is-vertical">
+                  <div class="fs-styleguide_section-header">
+                    <h2 class="fs-styleguide_heading-medium">Logo</h2>
+                    <p class="text-size-medium">Logo variances with downloadable logo pack<br></p>
+                  </div>
+                  <div class="fs-styleguide_item-wrapper">
+                    <div class="fs-styleguide_3-col">
+                      <div class="fs-styleguide_item is-stretch">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627ca38-85aeb999" class="fs-styleguide_label is-hex">logo light</div><img src="images/logo_full_vertical_onDark.svg" width="400" alt="The Ahangama Villas. Private Holiday Homes, Sri Lanka">
+                      </div>
+                      <div class="fs-styleguide_item is-stretch">
+                        <div id="w-node-_44b3199a-f2aa-5b62-f510-8fc514a83eea-85aeb999" class="fs-styleguide_label is-hex">logo logo light</div><img src="images/logo_brandmark_onDark.svg" width="400" alt="The Ahangama Villas">
+                      </div>
+                      <div class="fs-styleguide_item is-stretch">
+                        <div id="w-node-_675fabce-c396-e354-d15e-614541fd1928-85aeb999" class="fs-styleguide_label is-hex">logo dark</div>
+                        <div id="w-node-_84159d4c-1f20-c678-13a6-b31040f02c76-85aeb999" class="background-color-light">
+                          <div class="padding-medium"><img src="images/logo_full_vertical_onLight.svg" width="400" alt="The Ahangama Villas. Private Holiday Homes, Sri Lanka"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_item is-stretch">
+                        <div id="w-node-_0b2d97c5-69c9-1821-a77c-bfb41f10f835-85aeb999" class="fs-styleguide_label is-hex">logo icon dark</div>
+                        <div id="w-node-_0b2d97c5-69c9-1821-a77c-bfb41f10f837-85aeb999" class="background-color-light">
+                          <div class="padding-medium"><img src="images/logo_brandmark_onLight.svg" width="400" alt="The Ahangama Villas"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="fs-styleguide_1-col"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="fs-styleguide_colors">
+          <div class="padding-section-large">
+            <div class="padding-global">
+              <div class="container-large">
+                <div class="fs-styleguide_section">
+                  <div class="fs-styleguide_section-header">
+                    <h2 class="fs-styleguide_heading-medium">Colors</h2>
+                    <p class="text-size-medium">Manage recurring text and background colors.<br></p>
+                  </div>
+                  <div class="fs-styleguide_item-wrapper">
+                    <div class="fs-styleguide_item-header">
+                      <h3>Color Palette</h3>
+                    </div>
+                    <h4>Main</h4>
+                    <div class="fs-styleguide_3-col">
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label is-hex">#0C0C0C</div>
+                        <div id="w-node-_4dc99a3b-a80e-0483-ddc0-1c3f39fbeec6-85aeb999">shade-darkest</div>
+                        <div class="fs-styleguide_background">
+                          <div class="fs-styleguide_color is-1">
+                            <div class="fs-styleguide_background-space"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label is-hex">#fffff</div>
+                        <div id="w-node-_1d2a6f5e-c6c7-ca5d-cdb1-49f22f963022-85aeb999">white</div>
+                        <div class="fs-styleguide_background">
+                          <div class="fs-styleguide_color is-2">
+                            <div class="fs-styleguide_background-space"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label is-hex">#0C0C0C 40%</div>
+                        <div id="w-node-b43ecec6-5ad2-b764-5778-4b767f793792-85aeb999">shade-darkest-40</div>
+                        <div class="fs-styleguide_background">
+                          <div class="fs-styleguide_color is-3">
+                            <div class="fs-styleguide_background-space"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <h4>Status</h4>
+                    <div class="fs-styleguide_3-col">
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label is-hex">#01f511</div>
+                        <div id="w-node-fa8eca4a-8bbe-d183-7f50-74ef6f3c0fbe-85aeb999">success</div>
+                        <div class="fs-styleguide_background">
+                          <div class="fs-styleguide_color is-4">
+                            <div class="fs-styleguide_background-space"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label is-hex">#f0451a</div>
+                        <div id="w-node-fa8eca4a-8bbe-d183-7f50-74ef6f3c0fc6-85aeb999">error</div>
+                        <div class="fs-styleguide_background">
+                          <div class="fs-styleguide_color is-5">
+                            <div class="fs-styleguide_background-space"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label is-hex">#fff205</div>
+                        <div id="w-node-fa8eca4a-8bbe-d183-7f50-74ef6f3c0fce-85aeb999">warning</div>
+                        <div class="fs-styleguide_background">
+                          <div class="fs-styleguide_color is-6">
+                            <div class="fs-styleguide_background-space"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <h4>Gradient Styles</h4>
+                    <div class="fs-styleguide_3-col">
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">grad100</div>
+                        <div class="fs-styleguide_background">
+                          <div class="grad100">
+                            <div class="fs-styleguide_background-space"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">grad100 top</div>
+                        <div class="fs-styleguide_background">
+                          <div class="grad100 top">
+                            <div class="fs-styleguide_background-space"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">grad72</div>
+                        <div class="fs-styleguide_background">
+                          <div class="grad72">
+                            <div class="fs-styleguide_background-space"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fs-styleguide_item-wrapper">
+                    <div class="fs-styleguide_item-header">
+                      <h3>Text Colour Styles</h3>
+                    </div>
+                    <div class="fs-styleguide_3-col">
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">text-color-dark</div>
+                        <div id="w-node-_88e744d3-148d-cb75-8f31-087293476de8-85aeb999" class="background-color-light">
+                          <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbb8-85aeb999" class="text-color-dark">text-color-dark</div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">text-color-mid</div>
+                        <div class="text-color-mid">text-color-mid</div>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">text-color-light</div>
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc2-85aeb999" class="background-color-dark">
+                          <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cbc3-85aeb999" class="text-color-light">text-color-light</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fs-styleguide_item-wrapper">
+                    <div class="fs-styleguide_item-header">
+                      <h3>Background Colour Styles</h3>
+                    </div>
+                    <div class="fs-styleguide_3-col">
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">background-color-dark</div>
+                        <div class="fs-styleguide_background">
+                          <div class="background-color-dark">
+                            <div class="fs-styleguide_background-space"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">background-color-mid</div>
+                        <div class="fs-styleguide_background">
+                          <div class="background-color-mid">
+                            <div class="fs-styleguide_background-space"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">background-color-light</div>
+                        <div class="fs-styleguide_background">
+                          <div class="background-color-light">
+                            <div class="fs-styleguide_background-space"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="fs-styleguide_heading-tags">
+          <div class="padding-section-large">
+            <div class="padding-global">
+              <div class="container-large">
+                <div class="fs-styleguide_section">
+                  <div class="fs-styleguide_section-header">
+                    <h2 class="fs-styleguide_heading-medium">Typography</h2>
+                    <p class="text-size-medium">Sexy letters<br></p>
+                  </div>
+                  <div class="fs-styleguide_item-wrapper">
+                    <div class="fs-styleguide_item-header">
+                      <h3>HTML Headings</h3>
+                    </div>
+                    <div class="fs-styleguide_1-col">
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label is-tag">H1</div>
+                        <h1>Heading 1</h1>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label is-tag">H2</div>
+                        <h2>Heading 2</h2>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label is-tag">H3</div>
+                        <h3>Heading 3</h3>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label is-tag">H4</div>
+                        <h4>Heading 4</h4>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label is-tag">H5</div>
+                        <h5>Heading 5</h5>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label is-tag">H6</div>
+                        <h6>Heading 6</h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fs-styleguide_item-wrapper">
+                    <div class="fs-styleguide_item-header">
+                      <h3>Heading Styles</h3>
+                    </div>
+                    <div class="fs-styleguide_1-col">
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">heading-style-h1</div>
+                        <h2 class="heading-style-h1">Heading Style 1</h2>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">heading-style-h2</div>
+                        <h2 class="heading-style-h2">Heading Style 2</h2>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">heading-style-h3</div>
+                        <h2 class="heading-style-h3">Heading Style 3</h2>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">heading-style-h4</div>
+                        <h2 class="heading-style-h4">Heading Style 4</h2>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">heading-style-h5</div>
+                        <h2 class="heading-style-h5">Heading Style 5</h2>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">heading-style-h6</div>
+                        <h2 class="heading-style-h6">Heading Style 6</h2>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fs-styleguide_item-wrapper">
+                    <div class="fs-styleguide_item-header">
+                      <h3>Other HTML Classes</h3>
+                    </div>
+                    <div class="fs-styleguide_2-col">
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label is-tag">All paragraphs</div>
+                        <p>Sample text is being used as a placeholder for real text that is normally present. Sample text helps you understand how real text may look on your website. Sample text is being used as a placeholder for real text.<br></p>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label is-tag">All links</div>
+                        <a href="#">All Links</a>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label is-tag">All quotes</div>
+                        <blockquote>Sample text is being used as a placeholder for real text that is normally present. Sample text helps you understand how real text may look on your website.</blockquote>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label is-tag">All Ordered Lists</div>
+                        <ol role="list">
+                          <li>Sample text is being used as a placeholder for real text that is normally present.</li>
+                          <li>Sample text is being used as a placeholder for real text that is normally present.</li>
+                          <li>Sample text is being used as a placeholder for real text that is normally present.</li>
+                        </ol>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label is-tag">All Unordered Lists</div>
+                        <ul role="list">
+                          <li>Sample text is being used as a placeholder for real text that is normally present.</li>
+                          <li>Sample text is being used as a placeholder for real text that is normally present.</li>
+                          <li>Sample text is being used as a placeholder for real text that is normally present.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fs-styleguide_item-wrapper">
+                    <div class="fs-styleguide_item-header">
+                      <h3>Text Sizes</h3>
+                    </div>
+                    <div class="fs-styleguide_3-col">
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">text-size-xlarge</div>
+                        <p class="text-size-xlarge">Sample text is being used as a placeholder for real text that is normally present.<br></p>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">text-size-large</div>
+                        <p class="text-size-large">Sample text is being used as a placeholder for real text that is normally present.<br></p>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">text-size-medium</div>
+                        <p class="text-size-medium">Sample text is being used as a placeholder for real text that is normally present on your website.<br></p>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">text-size-regular</div>
+                        <p class="text-size-regular">Sample text is being used as a placeholder for real text that is normally present. Sample text helps you understand how real text may look on your website. <br></p>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">text-size-small</div>
+                        <p class="text-size-small">Sample text is being used as a placeholder for real text that is normally present on your website. Sample text helps you understand how real text may look on your website. <br></p>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">text-size-tiny</div>
+                        <p class="text-size-tiny">Sample text is being used as a placeholder for real text that is normally present on your website. Sample text helps you understand how real text may look on your website. <br></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fs-styleguide_item-wrapper">
+                    <div class="fs-styleguide_item-header">
+                      <h3>Text Stlyes</h3>
+                    </div>
+                    <div class="fs-styleguide_3-col">
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">text-style-strikethrough</div>
+                        <p class="text-style-strikethrough">text-style-strikethrough<br></p>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">text-style-italic</div>
+                        <p class="text-style-italic">text-style-italic<br></p>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">text-style-muted</div>
+                        <p class="text-style-muted">text-style-muted<br></p>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">text-style-allcaps</div>
+                        <p class="text-style-allcaps">text-style-allcaps<br></p>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">text-style-nowrap</div>
+                        <p class="text-style-nowrap">text-style-nowrap<br></p>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">text-style-link</div>
+                        <p class="text-style-link">text-style-link<br></p>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">text-style-quote</div>
+                        <p class="text-style-quote">Sample text is being used as a placeholder.<br></p>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">text-style-2lines</div>
+                        <p class="text-style-2lines">Sample text is being used as a placeholder for real text that is normally present. Sample text helps you understand how real text may look on your website. Sample text is being used as a placeholder for real text text-style-2lines<br></p>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">text-style-3lines</div>
+                        <p class="text-style-3lines">Sample text is being used as a placeholder for real text that is normally present. Sample text helps you understand how real text may look on your website. Sample text is being used as a placeholder for real text. Sample text is being used as a placeholder for real text that is normally present. Sample text helps you understand how real text may look on your website. Sample text is being used as a placeholder for real text.<br></p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fs-styleguide_item-wrapper">
+                    <div class="fs-styleguide_item-header">
+                      <h3>Text Weight</h3>
+                    </div>
+                    <div class="fs-styleguide_3-col">
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">text-weight-xbold</div>
+                        <div class="text-weight-xbold">text-weight-xbold</div>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">text-weight-bold</div>
+                        <div class="text-weight-bold">text-weight-bold</div>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">text-weight-semibold</div>
+                        <div id="w-node-_53261269-1d04-68bd-296d-c1247a55a687-85aeb999" class="text-weight-semibold">text-weight-semibold</div>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">text-weight-medium</div>
+                        <div class="text-weight-medium">text-weight-medium</div>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">text-weight-normal</div>
+                        <div class="text-weight-normal">text-weight-normal</div>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">text-weight-light</div>
+                        <div class="text-weight-light">text-weight-light</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fs-styleguide_item-wrapper">
+                    <div class="fs-styleguide_item-header">
+                      <h3>Text Alignments</h3>
+                    </div>
+                    <div class="fs-styleguide_3-col">
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">text-align-left</div>
+                        <div id="w-node-_7c21ca76-2c3e-a6d6-8ad2-a1ffdb21828e-85aeb999" class="text-align-left">text-align-left</div>
+                      </div>
+                      <div class="fs-styleguide_item is-stretch">
+                        <div id="w-node-_7c21ca76-2c3e-a6d6-8ad2-a1ffdb218291-85aeb999" class="fs-styleguide_label">text-align-center</div>
+                        <div id="w-node-_7c21ca76-2c3e-a6d6-8ad2-a1ffdb218293-85aeb999" class="text-align-center">text-align-center</div>
+                      </div>
+                      <div class="fs-styleguide_item is-stretch">
+                        <div id="w-node-_7c21ca76-2c3e-a6d6-8ad2-a1ffdb218296-85aeb999" class="fs-styleguide_label">text-align-right</div>
+                        <div class="text-align-right">text-align-right</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fs-styleguide_item-wrapper">
+                    <div class="fs-styleguide_item-header">
+                      <h3>Rich Text Element</h3>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">text-rich-text</div>
+                      <div class="text-rich-text w-richtext">
+                        <h1>Heading 1</h1>
+                        <h2>Heading 2</h2>
+                        <h3>Heading 3</h3>
+                        <h4>Heading 4</h4>
+                        <h5>Heading 5</h5>
+                        <h6>Heading 6</h6>
+                        <p>Sample text with a <a href="http://finsweet.com">link</a> is being used as a placeholder for real text that is normally present. Sample text helps you understand how real text may look on your website. Sample text is being used as a placeholder for real text. Sample text is being used as a placeholder for real text. Sample text is being used as a placeholder for real text.</p>
+                        <ul role="list">
+                          <li>Sample text is being used as a placeholder for real text that is normally present.</li>
+                          <li>Sample text is being used as a placeholder for real text that is normally present.</li>
+                          <li>Sample text is being used as a placeholder for real text that is normally present.</li>
+                        </ul>
+                        <ol start="" role="list">
+                          <li>Sample text is being used as a placeholder for real text that is normally present.</li>
+                          <li>Sample text is being used as a placeholder for real text that is normally present.</li>
+                          <li>Sample text is being used as a placeholder for real text that is normally present.</li>
+                        </ol>
+                        <blockquote>Sample text is being used as a placeholder for real text that is normally present. Sample text helps you understand how real text may look on your website. Sample text is being used as a placeholder for real text that is normally present.</blockquote>
+                        <figure class="w-richtext-align-normal w-richtext-figure-type-image">
+                          <div><img src="images/image.svg" loading="lazy" alt=""></div>
+                        </figure>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="fs-styleguide_buttons">
+          <div class="padding-section-large">
+            <div class="padding-global">
+              <div class="container-large">
+                <div class="fs-styleguide_section">
+                  <div class="fs-styleguide_section-header">
+                    <h2 class="fs-styleguide_heading-medium">Buttons</h2>
+                    <p class="text-size-medium">Button combo class system.<br></p>
+                  </div>
+                  <div class="fs-styleguide_3-col">
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_label">button</div>
+                      <a href="#" class="button w-button">Button Text</a>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_row">
+                        <div class="fs-styleguide_label">button</div>
+                        <div class="fs-styleguide_label">is-medium</div>
+                      </div>
+                      <a href="#" class="button is-medium w-button">Button Text</a>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_row">
+                        <div class="fs-styleguide_label">button</div>
+                        <div class="fs-styleguide_label">is-small</div>
+                      </div>
+                      <a href="#" class="button is-small w-button">Button Text</a>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_row">
+                        <div class="fs-styleguide_label">button</div>
+                        <div class="fs-styleguide_label">is-secondary</div>
+                      </div>
+                      <a href="#" class="button is-secondary w-button">Button Text</a>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_row">
+                        <div class="fs-styleguide_label">button</div>
+                        <div class="fs-styleguide_label">is-text</div>
+                      </div>
+                      <a href="#" class="button is-text w-button">Button Text</a>
+                    </div>
+                    <div class="fs-styleguide_item">
+                      <div class="fs-styleguide_row">
+                        <div class="fs-styleguide_label">button</div>
+                        <div class="fs-styleguide_label">is-icon</div>
+                      </div>
+                      <a href="#" class="button is-icon w-inline-block">
+                        <div>Button Text</div>
+                        <div class="icon-1x1-small w-embed"><svg aria-hidden="true" fill="currentColor" role="img" viewbox="0 0 20 21" xmlns="http://www.w3.org/2000/svg">
+                            <title>Arrow Right</title>
+                            <polygon points="16.172 9 10.101 2.929 11.515 1.515 20 10 19.293 10.707 11.515 18.485 10.101 17.071 16.172 11 0 11 0 9">
+                          </polygon></svg></div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="fs-styleguide_form">
+          <div class="padding-section-large">
+            <div class="padding-global">
+              <div class="container-large">
+                <div class="fs-styleguide_section">
+                  <div class="fs-styleguide_section-header">
+                    <h2 class="fs-styleguide_heading-medium">Form</h2>
+                  </div>
+                  <div class="fs-styleguide_item-wrapper">
+                    <div class="fs-styleguide_1-col">
+                      <div class="fs-styleguide_item is-stretch">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cdc7-85aeb999" class="fs-styleguide_label">form_component</div>
+                        <p class="text-size-medium">Example of a form component using Folders<br></p>
+                        <div class="form_component w-form">
+                          <form id="wf-form-Form" name="wf-form-Form" data-name="Form" method="get" class="form_form" data-wf-page-id="645c82bc49404a7d85aeb999" data-wf-element-id="32eadc24-e391-a089-abe0-fb5b6627cdca">
+                            <div class="form_field-wrapper"><label for="First-Name-2" class="form_label">Text Input</label><input class="form_input w-input" maxlength="256" name="First-Name-2" data-name="First Name 2" placeholder="First Name" type="text" id="First-Name-2"></div>
+                            <div class="form_field-wrapper"><label for="Message-2" class="form_label">Text Area</label><textarea id="Message-2" name="Message-2" maxlength="5000" data-name="Message 2" placeholder="Message" class="form_input is-text-area w-input"></textarea></div>
+                            <div class="form_field-wrapper"><label for="select-field" class="form_label">Select field</label>
+                              <div class="input_select-wrap"><select id="select-field" name="Style-Select-2" data-name="Style Select 2" class="form_input is-select-input w-select">
+                                  <option value="">Select one...</option>
+                                  <option value="First">First Choice</option>
+                                  <option value="Second">Second Choice</option>
+                                  <option value="Third">Third Choice</option>
+                                </select>
+                                <div class="input_select-icon w-embed"><svg width="16" height="16" viewbox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 5.64062L8 12.6406L1 5.64062L2.64062 4L8 9.35938L13.3594 4L15 5.64062Z"></path>
+                                  </svg></div>
+                              </div>
+                            </div>
+                            <div class="form_field-wrapper"><label for="email" class="form_label">Checkbox field</label><label class="w-checkbox form_checkbox-wrap">
+                                <div class="w-checkbox-input w-checkbox-input--inputType-custom form_checkbox"></div><input type="checkbox" id="Checkbox-1" name="Checkbox-1" data-name="Checkbox 1" style="opacity:0;position:absolute;z-index:-1"><span class="w-form-label" for="Checkbox-1">Checkbox</span>
+                              </label><label class="w-checkbox form_checkbox-wrap">
+                                <div class="w-checkbox-input w-checkbox-input--inputType-custom form_checkbox"></div><input id="Checkbox-2" type="checkbox" name="Checkbox-2" data-name="Checkbox 2" style="opacity:0;position:absolute;z-index:-1"><span class="w-form-label" for="Checkbox-2">Checkbox</span>
+                              </label><label class="w-checkbox form_checkbox-wrap">
+                                <div class="w-checkbox-input w-checkbox-input--inputType-custom form_checkbox"></div><input id="Checkbox-3" type="checkbox" name="Checkbox-3" data-name="Checkbox 3" style="opacity:0;position:absolute;z-index:-1"><span class="w-form-label" for="Checkbox-3">Checkbox</span>
+                              </label></div>
+                            <div class="form_field-wrapper"><label for="email" class="form_label">Radio button</label><label class="form_radio-wrap w-radio">
+                                <div class="w-form-formradioinput w-form-formradioinput--inputType-custom input_radio w-radio-input"></div><input type="radio" data-name="Radio" name="Radio" id="Radio-1" style="opacity:0;position:absolute;z-index:-1" value="Radio-1"><span class="w-form-label" for="Radio-1">Radio</span>
+                              </label><label class="form_radio-wrap w-radio">
+                                <div class="w-form-formradioinput w-form-formradioinput--inputType-custom input_radio w-radio-input"></div><input id="Radio-2" type="radio" name="Radio" data-name="Radio" style="opacity:0;position:absolute;z-index:-1" value="Radio-2"><span class="w-form-label" for="Radio-2">Radio</span>
+                              </label><label class="form_radio-wrap w-radio">
+                                <div class="w-form-formradioinput w-form-formradioinput--inputType-custom input_radio w-radio-input"></div><input id="Radio-3" type="radio" name="Radio" data-name="Radio" style="opacity:0;position:absolute;z-index:-1" value="Radio-3"><span class="w-form-label" for="Radio-3">Radio</span>
+                              </label></div>
+                            <div class="form_field-wrapper"><label for="Style-Select-2" class="input_label">Label</label><label class="w-checkbox input_checkbox-wrap">
+                                <div class="w-checkbox-input w-checkbox-input--inputType-custom input_switch"></div><input type="checkbox" data-name="Swicth" name="Swicth" id="Swicth" style="opacity:0;position:absolute;z-index:-1"><span class="input_checkbox-text w-form-label" for="Swicth">Switch</span>
+                              </label></div><input type="submit" data-wait="Please wait..." class="button is-form-submit w-button" value="Submit">
+                          </form>
+                          <div class="form_message-success w-form-done">
+                            <div>Thank you! Your submission has been received!</div>
+                          </div>
+                          <div class="form_message-error w-form-fail">
+                            <div>Oops! Something went wrong while submitting the form.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="fs-styleguide_icons">
+          <div class="padding-section-large">
+            <div class="padding-global">
+              <div class="container-large">
+                <div class="fs-styleguide_section">
+                  <div class="fs-styleguide_section-header">
+                    <h2 class="fs-styleguide_heading-medium">Icons</h2>
+                    <p class="text-size-medium">Unify icons sizes. <strong>icon-height</strong> sets height of icons. <strong>icon-1x1</strong> sets both height and width of icons.<br></p>
+                  </div>
+                  <div class="fs-styleguide_item-wrapper">
+                    <div class="fs-styleguide_2-col">
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">icon-height-small</div><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="icon-height-small">
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">icon-height-medium</div><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="icon-height-medium">
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">icon-height-large</div><img src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg" loading="lazy" alt="" class="icon-height-large">
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">icon-1x1-small</div>
+                        <div class="fs-styleguide_row">
+                          <div class="icon-1x1-small w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Twitter</title>
+                              <path d="M19.9442 8.04822C19.9569 8.22588 19.9569 8.40357 19.9569 8.58123C19.9569 14 15.8326 20.2437 8.29444 20.2437C5.97209 20.2437 3.81473 19.5711 2 18.4036C2.32996 18.4417 2.64719 18.4544 2.98985 18.4544C4.90607 18.4544 6.67006 17.8072 8.0787 16.7031C6.27666 16.665 4.7665 15.4848 4.24618 13.8604C4.50001 13.8985 4.7538 13.9239 5.02032 13.9239C5.38833 13.9239 5.75638 13.8731 6.099 13.7843C4.22083 13.4036 2.81215 11.7538 2.81215 9.76143V9.71069C3.35782 10.0153 3.99239 10.2056 4.66493 10.231C3.56087 9.4949 2.83754 8.23857 2.83754 6.81724C2.83754 6.05583 3.04055 5.35786 3.3959 4.74871C5.41369 7.23603 8.44671 8.86037 11.8477 9.03807C11.7843 8.7335 11.7462 8.41627 11.7462 8.099C11.7462 5.84009 13.5736 4 15.8452 4C17.0254 4 18.0914 4.49492 18.8401 5.29442C19.7665 5.11676 20.6548 4.7741 21.4416 4.30457C21.137 5.25637 20.4898 6.05587 19.6396 6.56345C20.4645 6.47466 21.264 6.24618 22 5.92895C21.4417 6.7411 20.7437 7.46443 19.9442 8.04822V8.04822Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-small w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w">
+                              <title>Instagram</title>
+                              <path d="M12.0045 6.87222C9.16613 6.87222 6.87672 9.16163 6.87672 12C6.87672 14.8383 9.16613 17.1277 12.0045 17.1277C14.8428 17.1277 17.1322 14.8383 17.1322 12C17.1322 9.16163 14.8428 6.87222 12.0045 6.87222ZM12.0045 15.3337C10.1703 15.3337 8.67076 13.8386 8.67076 12C8.67076 10.1613 10.1658 8.66626 12.0045 8.66626C13.8431 8.66626 15.3382 10.1613 15.3382 12C15.3382 13.8386 13.8387 15.3337 12.0045 15.3337V15.3337ZM18.538 6.66247C18.538 7.32743 18.0025 7.8585 17.342 7.8585C16.677 7.8585 16.1459 7.32296 16.1459 6.66247C16.1459 6.00198 16.6815 5.46644 17.342 5.46644C18.0025 5.46644 18.538 6.00198 18.538 6.66247ZM21.9342 7.87635C21.8583 6.27421 21.4924 4.85504 20.3186 3.68579C19.1494 2.51654 17.7302 2.15059 16.1281 2.07026C14.4769 1.97654 9.52761 1.97654 7.87638 2.07026C6.2787 2.14613 4.85953 2.51207 3.68582 3.68133C2.51211 4.85058 2.15062 6.26975 2.07029 7.87189C1.97657 9.52312 1.97657 14.4724 2.07029 16.1236C2.14616 17.7257 2.51211 19.1449 3.68582 20.3142C4.85953 21.4834 6.27424 21.8494 7.87638 21.9297C9.52761 22.0234 14.4769 22.0234 16.1281 21.9297C17.7302 21.8538 19.1494 21.4879 20.3186 20.3142C21.4879 19.1449 21.8538 17.7257 21.9342 16.1236C22.0279 14.4724 22.0279 9.52758 21.9342 7.87635V7.87635ZM19.801 17.8953C19.4529 18.77 18.779 19.4439 17.8998 19.7965C16.5833 20.3186 13.4593 20.1981 12.0045 20.1981C10.5496 20.1981 7.42118 20.3142 6.10912 19.7965C5.23441 19.4484 4.56053 18.7745 4.20797 17.8953C3.68582 16.5788 3.80632 13.4548 3.80632 12C3.80632 10.5451 3.69028 7.41668 4.20797 6.10462C4.55606 5.22991 5.22995 4.55603 6.10912 4.20347C7.42564 3.68133 10.5496 3.80182 12.0045 3.80182C13.4593 3.80182 16.5878 3.68579 17.8998 4.20347C18.7745 4.55157 19.4484 5.22545 19.801 6.10462C20.3231 7.42115 20.2026 10.5451 20.2026 12C20.2026 13.4548 20.3231 16.5833 19.801 17.8953Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-small w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>LinkedIn</title>
+                              <path d="M20.4006 2H3.70878C2.79708 2 2 2.65642 2 3.5577V20.286C2 21.1925 2.79708 22 3.70878 22H20.3954C21.3123 22 22 21.1873 22 20.286V3.5577C22.0052 2.65642 21.3123 2 20.4006 2V2ZM8.19953 18.671H5.3342V9.76244H8.19953V18.671ZM6.86585 8.40792H6.84501C5.92811 8.40792 5.3342 7.72545 5.3342 6.87106C5.3342 6.00104 5.94374 5.3342 6.88148 5.3342C7.81922 5.3342 8.39229 5.99583 8.41313 6.87106C8.41313 7.72545 7.81922 8.40792 6.86585 8.40792ZM18.671 18.671H15.8057V13.7999C15.8057 12.633 15.3889 11.8359 14.3522 11.8359C13.5603 11.8359 13.0914 12.3725 12.883 12.8935C12.8049 13.081 12.7841 13.3363 12.7841 13.5968V18.671H9.91873V9.76244H12.7841V11.0023C13.2008 10.4084 13.852 9.55405 15.3681 9.55405C17.2488 9.55405 18.671 10.794 18.671 13.4665V18.671V18.671Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-small w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>YouTube</title>
+                              <path d="M21.8702 7.31296C21.8702 5.5549 20.577 4.14064 18.9792 4.14064C16.8148 4.03907 14.6075 4 12.3532 4C12.236 4 12.1188 4 12.0016 4C11.8844 4 11.7672 4 11.65 4C9.3997 4 7.18846 4.03907 5.0241 4.14064C3.43013 4.14064 2.13698 5.56272 2.13698 7.32077C2.03931 8.71159 1.99634 10.1024 2.00024 11.4932C1.99634 12.884 2.03931 14.2749 2.13307 15.6696C2.13307 17.4276 3.42622 18.8536 5.02019 18.8536C7.29394 18.9591 9.6263 19.006 11.9977 19.0021C14.373 19.0099 16.6976 18.963 18.9752 18.8536C20.5731 18.8536 21.8663 17.4276 21.8663 15.6696C21.96 14.2749 22.003 12.884 21.9991 11.4893C22.0069 10.0985 21.9639 8.70768 21.8702 7.31296V7.31296ZM10.0873 15.3258V7.64894L15.7521 11.4854L10.0873 15.3258Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-small w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Whatsapp</title>
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M18.118 5.8675C16.533 4.29473 14.4246 3.42857 12.1813 3.42857C9.93835 3.42857 7.83018 4.29473 6.24513 5.86746C4.66304 7.43732 3.7917 9.52379 3.7917 11.7425C3.7917 13.2575 4.20683 14.7402 4.99223 16.0303L5.33915 16.6001L5.12496 17.2318L4.26 19.7831L7.00339 18.9116L7.58656 18.7264L8.12304 19.0207C9.35813 19.6983 10.7614 20.0565 12.1813 20.0565C14.4245 20.0565 16.5329 19.1902 18.118 17.6173C19.7001 16.0474 20.5714 13.961 20.5714 11.7425C20.5714 9.52379 19.7001 7.43732 18.118 5.8675ZM2.36312 11.7425C2.36312 6.36165 6.75915 2 12.1813 2C17.6042 2 22 6.36165 22 11.7425C22 17.1227 17.6042 21.485 12.1813 21.485C10.4602 21.485 8.8425 21.0448 7.43589 20.2731L2 22L3.77201 16.7732C2.87795 15.3046 2.36312 13.5831 2.36312 11.7425ZM9.41834 6.97736C9.56325 6.97974 9.76473 6.98305 9.94091 7.45154C10.0036 7.61826 10.095 7.86514 10.1916 8.12572C10.3878 8.6552 10.6049 9.24123 10.6439 9.32614C10.702 9.45288 10.738 9.59962 10.6484 9.76234C10.6354 9.7859 10.6234 9.80819 10.6118 9.8295C10.5435 9.95567 10.4938 10.0476 10.3823 10.1678C10.3379 10.2154 10.292 10.2669 10.2461 10.3182C10.1565 10.4185 10.0671 10.5186 9.98979 10.5897C9.85943 10.7086 9.72332 10.8384 9.86033 11.0927C9.99729 11.3469 10.4698 12.1801 11.1897 12.8667C11.9643 13.6055 12.6497 13.9311 12.9964 14.0958C13.0638 14.1278 13.1184 14.1537 13.1584 14.1755C13.4046 14.3096 13.5515 14.2947 13.7042 14.1339C13.8562 13.9733 14.3577 13.431 14.5344 13.1889C14.711 12.9462 14.8764 12.9937 15.1032 13.085C15.3299 13.1766 16.5388 13.824 16.7851 13.9577C16.832 13.9832 16.876 14.0063 16.9168 14.0278C17.09 14.1188 17.2067 14.1801 17.2543 14.2658C17.3131 14.372 17.2945 14.8698 17.0636 15.4425C16.8326 16.0151 15.788 16.5377 15.327 16.5618C15.2481 16.566 15.1824 16.5792 15.1149 16.5928C14.7887 16.6583 14.4233 16.7318 12.3431 15.8281C10.0226 14.8197 8.55671 12.4768 8.25446 11.9937C8.22977 11.9542 8.21284 11.9272 8.20385 11.9143L8.20311 11.9132C8.0812 11.7391 7.23163 10.5257 7.27756 9.30466C7.32095 8.1587 7.91124 7.57952 8.18251 7.31335C8.20093 7.29527 8.21788 7.27864 8.23309 7.26337C8.47193 7.02288 8.74586 6.9798 8.91309 6.97707C8.92649 6.97686 8.93957 6.97664 8.95235 6.97643C9.12817 6.97353 9.24872 6.97155 9.3851 6.97658C9.3958 6.97699 9.40689 6.97717 9.41834 6.97736Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-small w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Facebook</title>
+                              <path d="M22.0025 12.0625C22.0025 6.505 17.525 2 12.0025 2C6.4775 2.00125 2 6.505 2 12.0638C2 17.085 5.6575 21.2475 10.4375 22.0025V14.9713H7.9V12.0638H10.44V9.845C10.44 7.32375 11.9338 5.93125 14.2175 5.93125C15.3125 5.93125 16.4562 6.1275 16.4562 6.1275V8.6025H15.195C13.9537 8.6025 13.5663 9.37875 13.5663 10.175V12.0625H16.3387L15.8962 14.97H13.565V22.0012C18.345 21.2462 22.0025 17.0838 22.0025 12.0625Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-small w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Messenger</title>
+                              <path d="M2 11.7003C2 6.12639 6.3664 2 12.0004 2C17.6343 2 22.0007 6.12639 22.0007 11.7003C22.0007 17.2743 17.6343 21.4007 12.0004 21.4007C10.9878 21.4007 10.0178 21.2669 9.10525 21.0169C8.92831 20.9677 8.7398 20.9809 8.57148 21.0544L6.58641 21.9319C6.46652 21.9848 6.33548 22.0075 6.20479 21.9978C6.07411 21.9882 5.94779 21.9467 5.83694 21.8768C5.72609 21.8069 5.63409 21.7109 5.56904 21.5971C5.50399 21.4834 5.46788 21.3554 5.46387 21.2244L5.40887 19.4456C5.40507 19.3373 5.37928 19.231 5.33308 19.133C5.28688 19.035 5.22122 18.9474 5.14011 18.8756C3.19504 17.1355 2 14.6154 2 11.7003ZM8.93274 9.87653L5.99514 14.5367C5.71388 14.9842 6.26265 15.488 6.68391 15.1692L9.84027 12.7741C9.94409 12.6953 10.0708 12.6524 10.2011 12.6519C10.3315 12.6515 10.4584 12.6935 10.5628 12.7716L12.8991 14.5242C13.0649 14.6485 13.2546 14.7371 13.4563 14.7845C13.6581 14.8318 13.8674 14.8368 14.0712 14.7993C14.2749 14.7617 14.4687 14.6823 14.6403 14.5661C14.8118 14.4499 14.9574 14.2994 15.068 14.1242L18.0056 9.46401C18.2881 9.0165 17.7381 8.51273 17.3168 8.83149L14.1604 11.2266C14.0566 11.3054 13.9299 11.3483 13.7996 11.3488C13.6692 11.3492 13.5423 11.3072 13.4379 11.2291L11.1016 9.47526C10.9358 9.35095 10.7461 9.26233 10.5444 9.21499C10.3426 9.16765 10.1333 9.16261 9.92953 9.20019C9.72577 9.23777 9.532 9.31716 9.36044 9.43335C9.18888 9.54954 9.04326 9.70126 8.93274 9.87653Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-small w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Slack</title>
+                              <path d="M6.2025 14.6375C6.2025 15.795 5.2575 16.7388 4.10125 16.7388C2.945 16.7388 2 15.795 2 14.6388C2 13.4825 2.945 12.5375 4.1 12.5375H6.2025V14.6375ZM7.26 14.6375C7.26 13.4825 8.205 12.5375 9.36125 12.5375C10.5175 12.5375 11.4625 13.4825 11.4625 14.6375V19.9C11.4625 21.055 10.5175 22 9.3625 22C8.80562 21.999 8.27179 21.7775 7.87778 21.384C7.48377 20.9904 7.26165 20.4569 7.26 19.9V14.6375ZM9.3625 6.2025C8.205 6.2025 7.26 5.2575 7.26 4.10125C7.26 2.945 8.205 2 9.3625 2C10.52 2 11.4625 2.945 11.4625 4.1V6.2025H9.3625ZM9.3625 7.26C10.5175 7.26 11.4625 8.205 11.4625 9.36125C11.4625 10.5175 10.5175 11.4625 9.3625 11.4625H4.1C2.94625 11.4625 2 10.5175 2 9.3625C2 8.205 2.945 7.26 4.1 7.26H9.3625ZM17.7987 9.3625C17.7987 8.205 18.7425 7.26 19.8988 7.26C21.055 7.26 22 8.205 22 9.36125C22 10.5175 21.055 11.4625 19.9 11.4625H17.7987V9.3625ZM16.7388 9.3625C16.7388 10.5175 15.795 11.4625 14.6388 11.4625C14.0821 11.4612 13.5486 11.2395 13.1548 10.846C12.7611 10.4525 12.5392 9.91916 12.5375 9.3625V4.1C12.5375 2.94625 13.4825 2 14.6375 2C15.795 2 16.7388 2.945 16.7388 4.1V9.3625ZM14.6375 17.7975C15.795 17.7975 16.74 18.7425 16.74 19.8988C16.74 21.055 15.795 22 14.6375 22C13.48 22 12.5362 21.055 12.5362 19.9V17.7975H14.6375ZM14.6375 16.7388C13.4825 16.7388 12.5375 15.795 12.5375 14.6388C12.5375 13.4825 13.4825 12.5375 14.6375 12.5375H19.9C21.055 12.5375 22 13.4825 22 14.6375C22 15.795 21.055 16.7388 19.9 16.7388H14.6375Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-small w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Skype</title>
+                              <path d="M7.83803 2C8.93803 2 10.0043 2.30875 10.923 2.8775C12.2953 2.73144 13.6828 2.89331 14.9846 3.35131C16.2863 3.8093 17.4695 4.5519 18.448 5.525C19.3058 6.38022 19.9866 7.39616 20.4514 8.51471C20.9161 9.63326 21.1559 10.8325 21.1568 12.0437C21.1568 12.4737 21.1268 12.9025 21.0668 13.3262C21.557 14.1967 21.8153 15.1785 21.8168 16.1775C21.8168 16.9428 21.6655 17.7006 21.3716 18.4072C21.0777 19.1138 20.647 19.7554 20.1043 20.295C19.008 21.3882 17.5225 22.0015 15.9743 22C14.9243 22 13.9018 21.7175 13.0118 21.195C11.6217 21.361 10.2122 21.2102 8.88864 20.7541C7.56512 20.298 6.36195 19.5483 5.36928 18.5612C4.51176 17.7061 3.83116 16.6903 3.36638 15.572C2.9016 14.4537 2.66174 13.2548 2.66053 12.0437C2.66053 11.59 2.69303 11.1387 2.76053 10.6925C2.12989 9.58502 1.88124 8.30079 2.05293 7.03797C2.22462 5.77514 2.80711 4.60391 3.71053 3.705C4.80646 2.61353 6.29129 2.0005 7.83803 2ZM8.39678 10.7625C8.62178 11.1487 8.93428 11.4775 9.30803 11.7237C9.80313 12.0477 10.3295 12.3212 10.8793 12.54C11.4943 12.7962 11.9705 13.015 12.3105 13.1937C12.5968 13.3337 12.8568 13.5237 13.0793 13.7537C13.248 13.9312 13.3418 14.1675 13.3418 14.4137C13.3488 14.5868 13.3145 14.7591 13.2417 14.9163C13.1688 15.0734 13.0596 15.211 12.923 15.3175C12.5593 15.5625 12.123 15.6787 11.6855 15.6475C11.2358 15.6526 10.7899 15.5649 10.3755 15.39C10.1512 15.2903 9.92944 15.1849 9.71053 15.0737C9.4844 14.9536 9.23281 14.8893 8.97678 14.8862C8.74756 14.8767 8.52343 14.9555 8.35053 15.1062C8.26789 15.1848 8.20329 15.2804 8.16121 15.3863C8.11912 15.4923 8.10055 15.6061 8.10678 15.72C8.10153 15.9356 8.16645 16.147 8.29178 16.3225C8.44294 16.5142 8.6386 16.6661 8.86178 16.765C9.73308 17.1428 10.6776 17.3218 11.6268 17.2887C12.3179 17.3025 13.0058 17.1903 13.6568 16.9575C14.1966 16.7659 14.6668 16.4172 15.0068 15.9562C15.3405 15.4687 15.5093 14.8875 15.4893 14.2975C15.5023 13.8154 15.3816 13.339 15.1405 12.9212C14.8958 12.5241 14.5663 12.186 14.1755 11.9312C13.6803 11.6118 13.1548 11.3417 12.6068 11.125C12.5482 11.0964 12.4877 11.0721 12.4255 11.0525C11.9979 10.8791 11.5756 10.6928 11.1593 10.4937C10.9066 10.3751 10.6778 10.2111 10.4843 10.01C10.3216 9.83885 10.2319 9.61111 10.2343 9.375C10.2263 9.19508 10.2667 9.0163 10.3514 8.85734C10.436 8.69837 10.5618 8.56504 10.7155 8.47125C11.0806 8.25362 11.5008 8.14638 11.9255 8.1625C12.2505 8.15875 12.5755 8.2 12.8905 8.2825C13.233 8.38125 13.568 8.50375 13.893 8.64875C14.0243 8.71 14.168 8.7425 14.313 8.74375C14.4188 8.74635 14.524 8.72654 14.6216 8.68561C14.7192 8.64467 14.807 8.58355 14.8793 8.50625C15.0335 8.33755 15.1144 8.11456 15.1043 7.88625C15.108 7.6687 15.0325 7.45721 14.8918 7.29125C14.6994 7.08954 14.4609 6.93767 14.1968 6.84875C13.9101 6.74338 13.6136 6.66676 13.3118 6.62C12.8895 6.55089 12.4621 6.51827 12.0343 6.5225C11.3805 6.51834 10.7309 6.62746 10.1143 6.845C9.54712 7.03628 9.04077 7.37442 8.64678 7.825C8.26775 8.27379 8.06748 8.84656 8.08428 9.43375C8.07178 9.89625 8.17928 10.3537 8.39678 10.7625Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-small w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Discord</title>
+                              <path d="M18.9313 5.26461C17.6344 4.66945 16.266 4.24467 14.8601 4.00087C14.8473 3.99872 14.8343 4.00058 14.8226 4.00617C14.811 4.01177 14.8014 4.02083 14.7951 4.03212C14.6188 4.34461 14.4238 4.75336 14.2876 5.07336C12.7721 4.84337 11.2306 4.84337 9.71513 5.07336C9.56315 4.71689 9.39121 4.36926 9.20014 4.03212C9.19372 4.02096 9.18408 4.012 9.17248 4.00642C9.16088 4.00084 9.14786 3.99891 9.13514 4.00087C7.7289 4.24337 6.36017 4.66836 5.06393 5.26461C5.05284 5.26884 5.04356 5.27679 5.03768 5.2871C2.44521 9.16081 1.73396 12.9395 2.08271 16.6707C2.08396 16.6882 2.09521 16.7057 2.10896 16.717C3.6186 17.8352 5.30717 18.689 7.10266 19.242C7.11533 19.246 7.12896 19.2458 7.14154 19.2415C7.15413 19.2373 7.16503 19.2291 7.17266 19.2182C7.55765 18.6932 7.90015 18.1395 8.19515 17.557C8.20129 17.545 8.2034 17.5313 8.20115 17.518C8.19889 17.5047 8.1924 17.4925 8.18265 17.4832C8.17619 17.4771 8.16852 17.4724 8.16015 17.4695C7.6216 17.2625 7.10003 17.0138 6.60016 16.7257C6.5862 16.7178 6.57582 16.7048 6.57116 16.6895C6.56651 16.6741 6.56794 16.6576 6.57516 16.6432C6.57942 16.6339 6.58585 16.6258 6.59391 16.6195C6.69891 16.5407 6.80391 16.4582 6.90391 16.3757C6.91274 16.3686 6.92334 16.3641 6.93457 16.3625C6.9458 16.361 6.95724 16.3625 6.96766 16.367C10.2414 17.862 13.7851 17.862 17.0188 16.367C17.0296 16.3623 17.0415 16.3607 17.0531 16.3622C17.0648 16.3637 17.0758 16.3684 17.0851 16.3757C17.1851 16.4582 17.2901 16.5407 17.395 16.6195C17.4036 16.6257 17.4104 16.6339 17.4149 16.6434C17.4195 16.6529 17.4216 16.6634 17.4211 16.674C17.4206 16.6845 17.4175 16.6947 17.4121 16.7038C17.4067 16.7128 17.3991 16.7203 17.39 16.7257C16.8913 17.0165 16.3691 17.2648 15.8288 17.4682C15.8202 17.4713 15.8124 17.4763 15.8059 17.4828C15.7994 17.4893 15.7944 17.4971 15.7913 17.5057C15.7884 17.5141 15.7873 17.5229 15.7879 17.5317C15.7886 17.5405 15.791 17.5491 15.7951 17.557C16.0951 18.1382 16.4388 18.6932 16.8163 19.2182C16.8239 19.2291 16.8348 19.2373 16.8474 19.2415C16.86 19.2458 16.8736 19.246 16.8863 19.242C18.6848 18.6907 20.3761 17.8368 21.8875 16.717C21.8951 16.7117 21.9014 16.7049 21.9059 16.6969C21.9105 16.6889 21.9131 16.6799 21.9138 16.6707C22.3312 12.357 21.215 8.60957 18.9563 5.28835C18.954 5.28287 18.9506 5.27792 18.9463 5.27383C18.942 5.26974 18.9369 5.2666 18.9313 5.26461ZM8.68389 14.3983C7.69765 14.3983 6.88641 13.4933 6.88641 12.3833C6.88641 11.272 7.68265 10.3671 8.68389 10.3671C9.69263 10.3671 10.4964 11.2795 10.4814 12.3833C10.4814 13.4933 9.68513 14.3983 8.68389 14.3983ZM15.3288 14.3983C14.3438 14.3983 13.5313 13.4933 13.5313 12.3833C13.5313 11.272 14.3276 10.3671 15.3288 10.3671C16.3376 10.3671 17.1426 11.2795 17.1263 12.3833C17.1263 13.4933 16.3376 14.3983 15.3288 14.3983Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-small w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Pinterest</title>
+                              <path d="M12.0064 2C9.67473 1.99852 7.41588 2.81185 5.62037 4.29934C3.82486 5.78684 2.60558 7.855 2.17335 10.1462C1.74111 12.4374 2.1231 14.8077 3.25326 16.8471C4.38342 18.8865 6.1907 20.4669 8.36261 21.315C8.27511 20.5238 8.19511 19.3075 8.39636 18.4438C8.57886 17.6625 9.56886 13.4725 9.56886 13.4725C9.56886 13.4725 9.27011 12.8738 9.27011 11.9888C9.27011 10.5975 10.0764 9.56 11.0801 9.56C11.9326 9.56 12.3451 10.2 12.3451 10.9688C12.3451 11.8263 11.7989 13.1088 11.5164 14.2975C11.2814 15.2925 12.0164 16.105 12.9976 16.105C14.7751 16.105 16.1414 14.23 16.1414 11.525C16.1414 9.13125 14.4201 7.4575 11.9639 7.4575C9.11886 7.4575 7.44886 9.59125 7.44886 11.7963C7.44886 12.6563 7.78011 13.5775 8.19261 14.0788C8.22813 14.1165 8.25325 14.1629 8.26552 14.2133C8.27779 14.2637 8.27679 14.3164 8.26261 14.3663C8.18636 14.6813 8.01761 15.3613 7.98511 15.5C7.94136 15.6825 7.84011 15.7213 7.65011 15.6338C6.40011 15.0525 5.62011 13.2263 5.62011 11.7588C5.62011 8.605 7.91261 5.70875 12.2276 5.70875C15.6964 5.70875 18.3926 8.18 18.3926 11.4838C18.3926 14.93 16.2189 17.7038 13.2039 17.7038C12.1901 17.7038 11.2376 17.1775 10.9114 16.555L10.2889 18.9325C10.0626 19.8013 9.45261 20.89 9.04511 21.5538C10.4201 21.9789 11.8706 22.1022 13.2976 21.9153C14.7246 21.7284 16.0945 21.2357 17.3136 20.4709C18.5327 19.706 19.5724 18.687 20.3615 17.4835C21.1507 16.28 21.6708 14.9203 21.8863 13.4973C22.1018 12.0744 22.0076 10.6217 21.6102 9.23844C21.2127 7.85522 20.5214 6.57408 19.5834 5.48255C18.6455 4.39101 17.4829 3.5148 16.1752 2.91377C14.8676 2.31274 13.4455 2.00105 12.0064 2Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-small w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Reddit</title>
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M19.0711 19.0711C20.9464 17.1957 22 14.6522 22 12C22 9.34784 20.9464 6.8043 19.0711 4.92893C17.1957 3.05357 14.6522 2 12 2C9.34784 2 6.8043 3.05357 4.92893 4.92893C3.05357 6.8043 2 9.34784 2 12C2 14.6522 3.05357 17.1957 4.92893 19.0711C6.8043 20.9464 9.34784 22 12 22C14.6522 22 17.1957 20.9464 19.0711 19.0711ZM16.2 10.95C16.4625 10.6987 16.8212 10.5437 17.215 10.5437C18.015 10.5437 18.6712 11.1875 18.6712 12C18.6712 12.5962 18.3125 13.11 17.8113 13.3363C17.835 13.48 17.8475 13.635 17.8475 13.7775C17.8475 16.0337 15.2338 17.8475 12.0125 17.8475C8.79 17.8475 6.17625 16.0212 6.17625 13.7775C6.17625 13.6237 6.1875 13.48 6.2125 13.3363C5.90882 13.1999 5.66113 12.9635 5.5108 12.6665C5.36047 12.3695 5.31662 12.03 5.38656 11.7045C5.45651 11.3791 5.63602 11.0875 5.8951 10.8785C6.15418 10.6695 6.47713 10.5558 6.81 10.5562C7.2025 10.5562 7.56 10.7113 7.8225 10.9613C8.8375 10.2338 10.235 9.76875 11.785 9.72125L12.525 6.23625C12.5294 6.20211 12.5413 6.16938 12.5599 6.14042C12.5785 6.11145 12.6033 6.08697 12.6325 6.06875C12.6605 6.05063 12.6918 6.03821 12.7246 6.03221C12.7575 6.0262 12.7911 6.02673 12.8238 6.03375L15.2463 6.54625C15.331 6.37146 15.463 6.22396 15.6275 6.12054C15.7919 6.01712 15.982 5.96193 16.1762 5.96125C16.3793 5.96147 16.5779 6.02129 16.7473 6.13328C16.9167 6.24527 17.0495 6.40451 17.1292 6.59127C17.209 6.77802 17.2322 6.98408 17.196 7.18389C17.1597 7.38371 17.0656 7.56849 16.9254 7.71534C16.7851 7.8622 16.6048 7.96466 16.4069 8.01003C16.209 8.05539 16.0021 8.04168 15.8118 7.97057C15.6216 7.89947 15.4564 7.77411 15.3368 7.61002C15.2172 7.44594 15.1483 7.25035 15.1388 7.0475L12.9662 6.5825L12.2987 9.70875C13.825 9.76875 15.1987 10.2337 16.2 10.95ZM8.97538 12.3042C9.16988 12.1097 9.43358 12.0003 9.70864 12C9.97774 12.0093 10.2327 12.1228 10.4198 12.3165C10.6068 12.5101 10.7114 12.7689 10.7114 13.0381C10.7114 13.3074 10.6068 13.5661 10.4198 13.7598C10.2327 13.9534 9.97774 14.0669 9.70864 14.0763C9.13614 14.0875 8.67114 13.6112 8.67114 13.0375C8.67147 12.7624 8.78089 12.4987 8.97538 12.3042ZM14.4824 15.795C13.7661 16.5112 12.4061 16.5588 12.0124 16.5588V16.5575C11.6061 16.5575 10.2461 16.4987 9.54114 15.795C9.51551 15.7702 9.49513 15.7405 9.48122 15.7076C9.4673 15.6747 9.46013 15.6394 9.46013 15.6038C9.46013 15.5681 9.4673 15.5328 9.48122 15.4999C9.49513 15.467 9.51551 15.4373 9.54114 15.4125C9.56597 15.3869 9.59569 15.3665 9.62854 15.3526C9.6614 15.3387 9.69671 15.3315 9.73239 15.3315C9.76807 15.3315 9.80339 15.3387 9.83624 15.3526C9.8691 15.3665 9.89882 15.3869 9.92364 15.4125C10.3774 15.8662 11.3311 16.0212 12.0124 16.0212C12.6924 16.0212 13.6586 15.8662 14.0999 15.4125C14.1247 15.3869 14.1544 15.3665 14.1873 15.3526C14.2201 15.3387 14.2555 15.3315 14.2911 15.3315C14.3268 15.3315 14.3621 15.3387 14.395 15.3526C14.4278 15.3665 14.4576 15.3869 14.4824 15.4125C14.5288 15.4654 14.5544 15.5334 14.5544 15.6038C14.5544 15.6741 14.5288 15.7421 14.4824 15.795ZM14.2911 14.0875C13.7186 14.0875 13.2524 13.6225 13.2524 13.05H13.2536C13.2667 12.7836 13.3817 12.5325 13.5749 12.3486C13.768 12.1648 14.0245 12.0622 14.2911 12.0622C14.5578 12.0622 14.8143 12.1648 15.0074 12.3486C15.2005 12.5325 15.3156 12.7836 15.3286 13.05C15.3286 13.6112 14.8636 14.0875 14.2911 14.0875Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-small w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Twitch</title>
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5.57125L6.57125 2H20.1425V12L13.7125 18.4287H10.8575L7.28625 22V18.4287H3V5.57125ZM15.8575 14.1425L18.7137 11.2863V3.42875H7.28625V14.1425H10.5V16.6425L13 14.1425H15.8575ZM15.1425 5.92876H16.5712V10.2125H15.1425V5.92876ZM11.2137 5.92876H12.6425V10.2125H11.2137V5.92876Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-small w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Airbnb</title>
+                              <path d="M12.3082 17.2285C11.1814 15.8147 10.5189 14.5754 10.2993 13.5151C9.29261 9.58657 15.3265 9.58657 14.3198 13.5151C14.0765 14.5977 13.414 15.8365 12.3109 17.2285H12.3082ZM18.4756 20.4977C16.5979 21.3151 14.7404 20.012 13.1497 18.2446C17.7881 12.4379 15.2082 9.31603 12.3082 9.31603C9.85645 9.31603 8.50646 11.3924 9.03681 13.8026C9.34618 15.1057 10.1631 16.5879 11.4667 18.2446C10.0145 19.8539 8.7636 20.5968 7.66539 20.6963C5.43326 21.028 3.68729 18.8633 4.48237 16.6298C5.15647 14.8816 9.46985 6.30935 9.65511 5.84596C10.3582 4.50356 10.7962 3.28348 12.306 3.28348C13.7497 3.28348 14.2435 4.4415 15.0011 5.95623C16.6082 9.10889 18.9899 13.8794 20.1278 16.6298C20.7158 18.1062 20.0667 19.8124 18.4756 20.4977ZM20.5738 14.4209C14.8203 2.17545 14.5015 2 12.3082 2C10.2761 2 9.41226 3.41383 8.52878 5.24954C3.78952 14.7276 3.33014 16.0709 3.29041 16.1879C2.16453 19.2829 4.48416 21.9999 7.29173 21.9999C8.26092 21.9999 9.99752 21.7294 12.3082 19.2142C14.9279 22.0615 16.8287 21.9999 17.3247 21.9999C20.1323 22.0021 22.4519 19.2829 21.3251 16.1879C21.326 16.0142 20.5743 14.4513 20.5743 14.4209H20.5738Z"></path>
+                            </svg></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">icon-1x1-medium</div>
+                        <div class="fs-styleguide_row">
+                          <div class="icon-1x1-medium w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Twitter</title>
+                              <path d="M19.9442 8.04822C19.9569 8.22588 19.9569 8.40357 19.9569 8.58123C19.9569 14 15.8326 20.2437 8.29444 20.2437C5.97209 20.2437 3.81473 19.5711 2 18.4036C2.32996 18.4417 2.64719 18.4544 2.98985 18.4544C4.90607 18.4544 6.67006 17.8072 8.0787 16.7031C6.27666 16.665 4.7665 15.4848 4.24618 13.8604C4.50001 13.8985 4.7538 13.9239 5.02032 13.9239C5.38833 13.9239 5.75638 13.8731 6.099 13.7843C4.22083 13.4036 2.81215 11.7538 2.81215 9.76143V9.71069C3.35782 10.0153 3.99239 10.2056 4.66493 10.231C3.56087 9.4949 2.83754 8.23857 2.83754 6.81724C2.83754 6.05583 3.04055 5.35786 3.3959 4.74871C5.41369 7.23603 8.44671 8.86037 11.8477 9.03807C11.7843 8.7335 11.7462 8.41627 11.7462 8.099C11.7462 5.84009 13.5736 4 15.8452 4C17.0254 4 18.0914 4.49492 18.8401 5.29442C19.7665 5.11676 20.6548 4.7741 21.4416 4.30457C21.137 5.25637 20.4898 6.05587 19.6396 6.56345C20.4645 6.47466 21.264 6.24618 22 5.92895C21.4417 6.7411 20.7437 7.46443 19.9442 8.04822V8.04822Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-medium w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w">
+                              <title>Instagram</title>
+                              <path d="M12.0045 6.87222C9.16613 6.87222 6.87672 9.16163 6.87672 12C6.87672 14.8383 9.16613 17.1277 12.0045 17.1277C14.8428 17.1277 17.1322 14.8383 17.1322 12C17.1322 9.16163 14.8428 6.87222 12.0045 6.87222ZM12.0045 15.3337C10.1703 15.3337 8.67076 13.8386 8.67076 12C8.67076 10.1613 10.1658 8.66626 12.0045 8.66626C13.8431 8.66626 15.3382 10.1613 15.3382 12C15.3382 13.8386 13.8387 15.3337 12.0045 15.3337V15.3337ZM18.538 6.66247C18.538 7.32743 18.0025 7.8585 17.342 7.8585C16.677 7.8585 16.1459 7.32296 16.1459 6.66247C16.1459 6.00198 16.6815 5.46644 17.342 5.46644C18.0025 5.46644 18.538 6.00198 18.538 6.66247ZM21.9342 7.87635C21.8583 6.27421 21.4924 4.85504 20.3186 3.68579C19.1494 2.51654 17.7302 2.15059 16.1281 2.07026C14.4769 1.97654 9.52761 1.97654 7.87638 2.07026C6.2787 2.14613 4.85953 2.51207 3.68582 3.68133C2.51211 4.85058 2.15062 6.26975 2.07029 7.87189C1.97657 9.52312 1.97657 14.4724 2.07029 16.1236C2.14616 17.7257 2.51211 19.1449 3.68582 20.3142C4.85953 21.4834 6.27424 21.8494 7.87638 21.9297C9.52761 22.0234 14.4769 22.0234 16.1281 21.9297C17.7302 21.8538 19.1494 21.4879 20.3186 20.3142C21.4879 19.1449 21.8538 17.7257 21.9342 16.1236C22.0279 14.4724 22.0279 9.52758 21.9342 7.87635V7.87635ZM19.801 17.8953C19.4529 18.77 18.779 19.4439 17.8998 19.7965C16.5833 20.3186 13.4593 20.1981 12.0045 20.1981C10.5496 20.1981 7.42118 20.3142 6.10912 19.7965C5.23441 19.4484 4.56053 18.7745 4.20797 17.8953C3.68582 16.5788 3.80632 13.4548 3.80632 12C3.80632 10.5451 3.69028 7.41668 4.20797 6.10462C4.55606 5.22991 5.22995 4.55603 6.10912 4.20347C7.42564 3.68133 10.5496 3.80182 12.0045 3.80182C13.4593 3.80182 16.5878 3.68579 17.8998 4.20347C18.7745 4.55157 19.4484 5.22545 19.801 6.10462C20.3231 7.42115 20.2026 10.5451 20.2026 12C20.2026 13.4548 20.3231 16.5833 19.801 17.8953Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-medium w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>LinkedIn</title>
+                              <path d="M20.4006 2H3.70878C2.79708 2 2 2.65642 2 3.5577V20.286C2 21.1925 2.79708 22 3.70878 22H20.3954C21.3123 22 22 21.1873 22 20.286V3.5577C22.0052 2.65642 21.3123 2 20.4006 2V2ZM8.19953 18.671H5.3342V9.76244H8.19953V18.671ZM6.86585 8.40792H6.84501C5.92811 8.40792 5.3342 7.72545 5.3342 6.87106C5.3342 6.00104 5.94374 5.3342 6.88148 5.3342C7.81922 5.3342 8.39229 5.99583 8.41313 6.87106C8.41313 7.72545 7.81922 8.40792 6.86585 8.40792ZM18.671 18.671H15.8057V13.7999C15.8057 12.633 15.3889 11.8359 14.3522 11.8359C13.5603 11.8359 13.0914 12.3725 12.883 12.8935C12.8049 13.081 12.7841 13.3363 12.7841 13.5968V18.671H9.91873V9.76244H12.7841V11.0023C13.2008 10.4084 13.852 9.55405 15.3681 9.55405C17.2488 9.55405 18.671 10.794 18.671 13.4665V18.671V18.671Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-medium w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>YouTube</title>
+                              <path d="M21.8702 7.31296C21.8702 5.5549 20.577 4.14064 18.9792 4.14064C16.8148 4.03907 14.6075 4 12.3532 4C12.236 4 12.1188 4 12.0016 4C11.8844 4 11.7672 4 11.65 4C9.3997 4 7.18846 4.03907 5.0241 4.14064C3.43013 4.14064 2.13698 5.56272 2.13698 7.32077C2.03931 8.71159 1.99634 10.1024 2.00024 11.4932C1.99634 12.884 2.03931 14.2749 2.13307 15.6696C2.13307 17.4276 3.42622 18.8536 5.02019 18.8536C7.29394 18.9591 9.6263 19.006 11.9977 19.0021C14.373 19.0099 16.6976 18.963 18.9752 18.8536C20.5731 18.8536 21.8663 17.4276 21.8663 15.6696C21.96 14.2749 22.003 12.884 21.9991 11.4893C22.0069 10.0985 21.9639 8.70768 21.8702 7.31296V7.31296ZM10.0873 15.3258V7.64894L15.7521 11.4854L10.0873 15.3258Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-medium w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Whatsapp</title>
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M18.118 5.8675C16.533 4.29473 14.4246 3.42857 12.1813 3.42857C9.93835 3.42857 7.83018 4.29473 6.24513 5.86746C4.66304 7.43732 3.7917 9.52379 3.7917 11.7425C3.7917 13.2575 4.20683 14.7402 4.99223 16.0303L5.33915 16.6001L5.12496 17.2318L4.26 19.7831L7.00339 18.9116L7.58656 18.7264L8.12304 19.0207C9.35813 19.6983 10.7614 20.0565 12.1813 20.0565C14.4245 20.0565 16.5329 19.1902 18.118 17.6173C19.7001 16.0474 20.5714 13.961 20.5714 11.7425C20.5714 9.52379 19.7001 7.43732 18.118 5.8675ZM2.36312 11.7425C2.36312 6.36165 6.75915 2 12.1813 2C17.6042 2 22 6.36165 22 11.7425C22 17.1227 17.6042 21.485 12.1813 21.485C10.4602 21.485 8.8425 21.0448 7.43589 20.2731L2 22L3.77201 16.7732C2.87795 15.3046 2.36312 13.5831 2.36312 11.7425ZM9.41834 6.97736C9.56325 6.97974 9.76473 6.98305 9.94091 7.45154C10.0036 7.61826 10.095 7.86514 10.1916 8.12572C10.3878 8.6552 10.6049 9.24123 10.6439 9.32614C10.702 9.45288 10.738 9.59962 10.6484 9.76234C10.6354 9.7859 10.6234 9.80819 10.6118 9.8295C10.5435 9.95567 10.4938 10.0476 10.3823 10.1678C10.3379 10.2154 10.292 10.2669 10.2461 10.3182C10.1565 10.4185 10.0671 10.5186 9.98979 10.5897C9.85943 10.7086 9.72332 10.8384 9.86033 11.0927C9.99729 11.3469 10.4698 12.1801 11.1897 12.8667C11.9643 13.6055 12.6497 13.9311 12.9964 14.0958C13.0638 14.1278 13.1184 14.1537 13.1584 14.1755C13.4046 14.3096 13.5515 14.2947 13.7042 14.1339C13.8562 13.9733 14.3577 13.431 14.5344 13.1889C14.711 12.9462 14.8764 12.9937 15.1032 13.085C15.3299 13.1766 16.5388 13.824 16.7851 13.9577C16.832 13.9832 16.876 14.0063 16.9168 14.0278C17.09 14.1188 17.2067 14.1801 17.2543 14.2658C17.3131 14.372 17.2945 14.8698 17.0636 15.4425C16.8326 16.0151 15.788 16.5377 15.327 16.5618C15.2481 16.566 15.1824 16.5792 15.1149 16.5928C14.7887 16.6583 14.4233 16.7318 12.3431 15.8281C10.0226 14.8197 8.55671 12.4768 8.25446 11.9937C8.22977 11.9542 8.21284 11.9272 8.20385 11.9143L8.20311 11.9132C8.0812 11.7391 7.23163 10.5257 7.27756 9.30466C7.32095 8.1587 7.91124 7.57952 8.18251 7.31335C8.20093 7.29527 8.21788 7.27864 8.23309 7.26337C8.47193 7.02288 8.74586 6.9798 8.91309 6.97707C8.92649 6.97686 8.93957 6.97664 8.95235 6.97643C9.12817 6.97353 9.24872 6.97155 9.3851 6.97658C9.3958 6.97699 9.40689 6.97717 9.41834 6.97736Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-medium w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Facebook</title>
+                              <path d="M22.0025 12.0625C22.0025 6.505 17.525 2 12.0025 2C6.4775 2.00125 2 6.505 2 12.0638C2 17.085 5.6575 21.2475 10.4375 22.0025V14.9713H7.9V12.0638H10.44V9.845C10.44 7.32375 11.9338 5.93125 14.2175 5.93125C15.3125 5.93125 16.4562 6.1275 16.4562 6.1275V8.6025H15.195C13.9537 8.6025 13.5663 9.37875 13.5663 10.175V12.0625H16.3387L15.8962 14.97H13.565V22.0012C18.345 21.2462 22.0025 17.0838 22.0025 12.0625Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-medium w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Messenger</title>
+                              <path d="M2 11.7003C2 6.12639 6.3664 2 12.0004 2C17.6343 2 22.0007 6.12639 22.0007 11.7003C22.0007 17.2743 17.6343 21.4007 12.0004 21.4007C10.9878 21.4007 10.0178 21.2669 9.10525 21.0169C8.92831 20.9677 8.7398 20.9809 8.57148 21.0544L6.58641 21.9319C6.46652 21.9848 6.33548 22.0075 6.20479 21.9978C6.07411 21.9882 5.94779 21.9467 5.83694 21.8768C5.72609 21.8069 5.63409 21.7109 5.56904 21.5971C5.50399 21.4834 5.46788 21.3554 5.46387 21.2244L5.40887 19.4456C5.40507 19.3373 5.37928 19.231 5.33308 19.133C5.28688 19.035 5.22122 18.9474 5.14011 18.8756C3.19504 17.1355 2 14.6154 2 11.7003ZM8.93274 9.87653L5.99514 14.5367C5.71388 14.9842 6.26265 15.488 6.68391 15.1692L9.84027 12.7741C9.94409 12.6953 10.0708 12.6524 10.2011 12.6519C10.3315 12.6515 10.4584 12.6935 10.5628 12.7716L12.8991 14.5242C13.0649 14.6485 13.2546 14.7371 13.4563 14.7845C13.6581 14.8318 13.8674 14.8368 14.0712 14.7993C14.2749 14.7617 14.4687 14.6823 14.6403 14.5661C14.8118 14.4499 14.9574 14.2994 15.068 14.1242L18.0056 9.46401C18.2881 9.0165 17.7381 8.51273 17.3168 8.83149L14.1604 11.2266C14.0566 11.3054 13.9299 11.3483 13.7996 11.3488C13.6692 11.3492 13.5423 11.3072 13.4379 11.2291L11.1016 9.47526C10.9358 9.35095 10.7461 9.26233 10.5444 9.21499C10.3426 9.16765 10.1333 9.16261 9.92953 9.20019C9.72577 9.23777 9.532 9.31716 9.36044 9.43335C9.18888 9.54954 9.04326 9.70126 8.93274 9.87653Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-medium w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Slack</title>
+                              <path d="M6.2025 14.6375C6.2025 15.795 5.2575 16.7388 4.10125 16.7388C2.945 16.7388 2 15.795 2 14.6388C2 13.4825 2.945 12.5375 4.1 12.5375H6.2025V14.6375ZM7.26 14.6375C7.26 13.4825 8.205 12.5375 9.36125 12.5375C10.5175 12.5375 11.4625 13.4825 11.4625 14.6375V19.9C11.4625 21.055 10.5175 22 9.3625 22C8.80562 21.999 8.27179 21.7775 7.87778 21.384C7.48377 20.9904 7.26165 20.4569 7.26 19.9V14.6375ZM9.3625 6.2025C8.205 6.2025 7.26 5.2575 7.26 4.10125C7.26 2.945 8.205 2 9.3625 2C10.52 2 11.4625 2.945 11.4625 4.1V6.2025H9.3625ZM9.3625 7.26C10.5175 7.26 11.4625 8.205 11.4625 9.36125C11.4625 10.5175 10.5175 11.4625 9.3625 11.4625H4.1C2.94625 11.4625 2 10.5175 2 9.3625C2 8.205 2.945 7.26 4.1 7.26H9.3625ZM17.7987 9.3625C17.7987 8.205 18.7425 7.26 19.8988 7.26C21.055 7.26 22 8.205 22 9.36125C22 10.5175 21.055 11.4625 19.9 11.4625H17.7987V9.3625ZM16.7388 9.3625C16.7388 10.5175 15.795 11.4625 14.6388 11.4625C14.0821 11.4612 13.5486 11.2395 13.1548 10.846C12.7611 10.4525 12.5392 9.91916 12.5375 9.3625V4.1C12.5375 2.94625 13.4825 2 14.6375 2C15.795 2 16.7388 2.945 16.7388 4.1V9.3625ZM14.6375 17.7975C15.795 17.7975 16.74 18.7425 16.74 19.8988C16.74 21.055 15.795 22 14.6375 22C13.48 22 12.5362 21.055 12.5362 19.9V17.7975H14.6375ZM14.6375 16.7388C13.4825 16.7388 12.5375 15.795 12.5375 14.6388C12.5375 13.4825 13.4825 12.5375 14.6375 12.5375H19.9C21.055 12.5375 22 13.4825 22 14.6375C22 15.795 21.055 16.7388 19.9 16.7388H14.6375Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-medium w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Skype</title>
+                              <path d="M7.83803 2C8.93803 2 10.0043 2.30875 10.923 2.8775C12.2953 2.73144 13.6828 2.89331 14.9846 3.35131C16.2863 3.8093 17.4695 4.5519 18.448 5.525C19.3058 6.38022 19.9866 7.39616 20.4514 8.51471C20.9161 9.63326 21.1559 10.8325 21.1568 12.0437C21.1568 12.4737 21.1268 12.9025 21.0668 13.3262C21.557 14.1967 21.8153 15.1785 21.8168 16.1775C21.8168 16.9428 21.6655 17.7006 21.3716 18.4072C21.0777 19.1138 20.647 19.7554 20.1043 20.295C19.008 21.3882 17.5225 22.0015 15.9743 22C14.9243 22 13.9018 21.7175 13.0118 21.195C11.6217 21.361 10.2122 21.2102 8.88864 20.7541C7.56512 20.298 6.36195 19.5483 5.36928 18.5612C4.51176 17.7061 3.83116 16.6903 3.36638 15.572C2.9016 14.4537 2.66174 13.2548 2.66053 12.0437C2.66053 11.59 2.69303 11.1387 2.76053 10.6925C2.12989 9.58502 1.88124 8.30079 2.05293 7.03797C2.22462 5.77514 2.80711 4.60391 3.71053 3.705C4.80646 2.61353 6.29129 2.0005 7.83803 2ZM8.39678 10.7625C8.62178 11.1487 8.93428 11.4775 9.30803 11.7237C9.80313 12.0477 10.3295 12.3212 10.8793 12.54C11.4943 12.7962 11.9705 13.015 12.3105 13.1937C12.5968 13.3337 12.8568 13.5237 13.0793 13.7537C13.248 13.9312 13.3418 14.1675 13.3418 14.4137C13.3488 14.5868 13.3145 14.7591 13.2417 14.9163C13.1688 15.0734 13.0596 15.211 12.923 15.3175C12.5593 15.5625 12.123 15.6787 11.6855 15.6475C11.2358 15.6526 10.7899 15.5649 10.3755 15.39C10.1512 15.2903 9.92944 15.1849 9.71053 15.0737C9.4844 14.9536 9.23281 14.8893 8.97678 14.8862C8.74756 14.8767 8.52343 14.9555 8.35053 15.1062C8.26789 15.1848 8.20329 15.2804 8.16121 15.3863C8.11912 15.4923 8.10055 15.6061 8.10678 15.72C8.10153 15.9356 8.16645 16.147 8.29178 16.3225C8.44294 16.5142 8.6386 16.6661 8.86178 16.765C9.73308 17.1428 10.6776 17.3218 11.6268 17.2887C12.3179 17.3025 13.0058 17.1903 13.6568 16.9575C14.1966 16.7659 14.6668 16.4172 15.0068 15.9562C15.3405 15.4687 15.5093 14.8875 15.4893 14.2975C15.5023 13.8154 15.3816 13.339 15.1405 12.9212C14.8958 12.5241 14.5663 12.186 14.1755 11.9312C13.6803 11.6118 13.1548 11.3417 12.6068 11.125C12.5482 11.0964 12.4877 11.0721 12.4255 11.0525C11.9979 10.8791 11.5756 10.6928 11.1593 10.4937C10.9066 10.3751 10.6778 10.2111 10.4843 10.01C10.3216 9.83885 10.2319 9.61111 10.2343 9.375C10.2263 9.19508 10.2667 9.0163 10.3514 8.85734C10.436 8.69837 10.5618 8.56504 10.7155 8.47125C11.0806 8.25362 11.5008 8.14638 11.9255 8.1625C12.2505 8.15875 12.5755 8.2 12.8905 8.2825C13.233 8.38125 13.568 8.50375 13.893 8.64875C14.0243 8.71 14.168 8.7425 14.313 8.74375C14.4188 8.74635 14.524 8.72654 14.6216 8.68561C14.7192 8.64467 14.807 8.58355 14.8793 8.50625C15.0335 8.33755 15.1144 8.11456 15.1043 7.88625C15.108 7.6687 15.0325 7.45721 14.8918 7.29125C14.6994 7.08954 14.4609 6.93767 14.1968 6.84875C13.9101 6.74338 13.6136 6.66676 13.3118 6.62C12.8895 6.55089 12.4621 6.51827 12.0343 6.5225C11.3805 6.51834 10.7309 6.62746 10.1143 6.845C9.54712 7.03628 9.04077 7.37442 8.64678 7.825C8.26775 8.27379 8.06748 8.84656 8.08428 9.43375C8.07178 9.89625 8.17928 10.3537 8.39678 10.7625Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-medium w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Pinterest</title>
+                              <path d="M12.0064 2C9.67473 1.99852 7.41588 2.81185 5.62037 4.29934C3.82486 5.78684 2.60558 7.855 2.17335 10.1462C1.74111 12.4374 2.1231 14.8077 3.25326 16.8471C4.38342 18.8865 6.1907 20.4669 8.36261 21.315C8.27511 20.5238 8.19511 19.3075 8.39636 18.4438C8.57886 17.6625 9.56886 13.4725 9.56886 13.4725C9.56886 13.4725 9.27011 12.8738 9.27011 11.9888C9.27011 10.5975 10.0764 9.56 11.0801 9.56C11.9326 9.56 12.3451 10.2 12.3451 10.9688C12.3451 11.8263 11.7989 13.1088 11.5164 14.2975C11.2814 15.2925 12.0164 16.105 12.9976 16.105C14.7751 16.105 16.1414 14.23 16.1414 11.525C16.1414 9.13125 14.4201 7.4575 11.9639 7.4575C9.11886 7.4575 7.44886 9.59125 7.44886 11.7963C7.44886 12.6563 7.78011 13.5775 8.19261 14.0788C8.22813 14.1165 8.25325 14.1629 8.26552 14.2133C8.27779 14.2637 8.27679 14.3164 8.26261 14.3663C8.18636 14.6813 8.01761 15.3613 7.98511 15.5C7.94136 15.6825 7.84011 15.7213 7.65011 15.6338C6.40011 15.0525 5.62011 13.2263 5.62011 11.7588C5.62011 8.605 7.91261 5.70875 12.2276 5.70875C15.6964 5.70875 18.3926 8.18 18.3926 11.4838C18.3926 14.93 16.2189 17.7038 13.2039 17.7038C12.1901 17.7038 11.2376 17.1775 10.9114 16.555L10.2889 18.9325C10.0626 19.8013 9.45261 20.89 9.04511 21.5538C10.4201 21.9789 11.8706 22.1022 13.2976 21.9153C14.7246 21.7284 16.0945 21.2357 17.3136 20.4709C18.5327 19.706 19.5724 18.687 20.3615 17.4835C21.1507 16.28 21.6708 14.9203 21.8863 13.4973C22.1018 12.0744 22.0076 10.6217 21.6102 9.23844C21.2127 7.85522 20.5214 6.57408 19.5834 5.48255C18.6455 4.39101 17.4829 3.5148 16.1752 2.91377C14.8676 2.31274 13.4455 2.00105 12.0064 2Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-medium w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Reddit</title>
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M19.0711 19.0711C20.9464 17.1957 22 14.6522 22 12C22 9.34784 20.9464 6.8043 19.0711 4.92893C17.1957 3.05357 14.6522 2 12 2C9.34784 2 6.8043 3.05357 4.92893 4.92893C3.05357 6.8043 2 9.34784 2 12C2 14.6522 3.05357 17.1957 4.92893 19.0711C6.8043 20.9464 9.34784 22 12 22C14.6522 22 17.1957 20.9464 19.0711 19.0711ZM16.2 10.95C16.4625 10.6987 16.8212 10.5437 17.215 10.5437C18.015 10.5437 18.6712 11.1875 18.6712 12C18.6712 12.5962 18.3125 13.11 17.8113 13.3363C17.835 13.48 17.8475 13.635 17.8475 13.7775C17.8475 16.0337 15.2338 17.8475 12.0125 17.8475C8.79 17.8475 6.17625 16.0212 6.17625 13.7775C6.17625 13.6237 6.1875 13.48 6.2125 13.3363C5.90882 13.1999 5.66113 12.9635 5.5108 12.6665C5.36047 12.3695 5.31662 12.03 5.38656 11.7045C5.45651 11.3791 5.63602 11.0875 5.8951 10.8785C6.15418 10.6695 6.47713 10.5558 6.81 10.5562C7.2025 10.5562 7.56 10.7113 7.8225 10.9613C8.8375 10.2338 10.235 9.76875 11.785 9.72125L12.525 6.23625C12.5294 6.20211 12.5413 6.16938 12.5599 6.14042C12.5785 6.11145 12.6033 6.08697 12.6325 6.06875C12.6605 6.05063 12.6918 6.03821 12.7246 6.03221C12.7575 6.0262 12.7911 6.02673 12.8238 6.03375L15.2463 6.54625C15.331 6.37146 15.463 6.22396 15.6275 6.12054C15.7919 6.01712 15.982 5.96193 16.1762 5.96125C16.3793 5.96147 16.5779 6.02129 16.7473 6.13328C16.9167 6.24527 17.0495 6.40451 17.1292 6.59127C17.209 6.77802 17.2322 6.98408 17.196 7.18389C17.1597 7.38371 17.0656 7.56849 16.9254 7.71534C16.7851 7.8622 16.6048 7.96466 16.4069 8.01003C16.209 8.05539 16.0021 8.04168 15.8118 7.97057C15.6216 7.89947 15.4564 7.77411 15.3368 7.61002C15.2172 7.44594 15.1483 7.25035 15.1388 7.0475L12.9662 6.5825L12.2987 9.70875C13.825 9.76875 15.1987 10.2337 16.2 10.95ZM8.97538 12.3042C9.16988 12.1097 9.43358 12.0003 9.70864 12C9.97774 12.0093 10.2327 12.1228 10.4198 12.3165C10.6068 12.5101 10.7114 12.7689 10.7114 13.0381C10.7114 13.3074 10.6068 13.5661 10.4198 13.7598C10.2327 13.9534 9.97774 14.0669 9.70864 14.0763C9.13614 14.0875 8.67114 13.6112 8.67114 13.0375C8.67147 12.7624 8.78089 12.4987 8.97538 12.3042ZM14.4824 15.795C13.7661 16.5112 12.4061 16.5588 12.0124 16.5588V16.5575C11.6061 16.5575 10.2461 16.4987 9.54114 15.795C9.51551 15.7702 9.49513 15.7405 9.48122 15.7076C9.4673 15.6747 9.46013 15.6394 9.46013 15.6038C9.46013 15.5681 9.4673 15.5328 9.48122 15.4999C9.49513 15.467 9.51551 15.4373 9.54114 15.4125C9.56597 15.3869 9.59569 15.3665 9.62854 15.3526C9.6614 15.3387 9.69671 15.3315 9.73239 15.3315C9.76807 15.3315 9.80339 15.3387 9.83624 15.3526C9.8691 15.3665 9.89882 15.3869 9.92364 15.4125C10.3774 15.8662 11.3311 16.0212 12.0124 16.0212C12.6924 16.0212 13.6586 15.8662 14.0999 15.4125C14.1247 15.3869 14.1544 15.3665 14.1873 15.3526C14.2201 15.3387 14.2555 15.3315 14.2911 15.3315C14.3268 15.3315 14.3621 15.3387 14.395 15.3526C14.4278 15.3665 14.4576 15.3869 14.4824 15.4125C14.5288 15.4654 14.5544 15.5334 14.5544 15.6038C14.5544 15.6741 14.5288 15.7421 14.4824 15.795ZM14.2911 14.0875C13.7186 14.0875 13.2524 13.6225 13.2524 13.05H13.2536C13.2667 12.7836 13.3817 12.5325 13.5749 12.3486C13.768 12.1648 14.0245 12.0622 14.2911 12.0622C14.5578 12.0622 14.8143 12.1648 15.0074 12.3486C15.2005 12.5325 15.3156 12.7836 15.3286 13.05C15.3286 13.6112 14.8636 14.0875 14.2911 14.0875Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-medium w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Twitch</title>
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5.57125L6.57125 2H20.1425V12L13.7125 18.4287H10.8575L7.28625 22V18.4287H3V5.57125ZM15.8575 14.1425L18.7137 11.2863V3.42875H7.28625V14.1425H10.5V16.6425L13 14.1425H15.8575ZM15.1425 5.92876H16.5712V10.2125H15.1425V5.92876ZM11.2137 5.92876H12.6425V10.2125H11.2137V5.92876Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-medium w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Airbnb</title>
+                              <path d="M12.3082 17.2285C11.1814 15.8147 10.5189 14.5754 10.2993 13.5151C9.29261 9.58657 15.3265 9.58657 14.3198 13.5151C14.0765 14.5977 13.414 15.8365 12.3109 17.2285H12.3082ZM18.4756 20.4977C16.5979 21.3151 14.7404 20.012 13.1497 18.2446C17.7881 12.4379 15.2082 9.31603 12.3082 9.31603C9.85645 9.31603 8.50646 11.3924 9.03681 13.8026C9.34618 15.1057 10.1631 16.5879 11.4667 18.2446C10.0145 19.8539 8.7636 20.5968 7.66539 20.6963C5.43326 21.028 3.68729 18.8633 4.48237 16.6298C5.15647 14.8816 9.46985 6.30935 9.65511 5.84596C10.3582 4.50356 10.7962 3.28348 12.306 3.28348C13.7497 3.28348 14.2435 4.4415 15.0011 5.95623C16.6082 9.10889 18.9899 13.8794 20.1278 16.6298C20.7158 18.1062 20.0667 19.8124 18.4756 20.4977ZM20.5738 14.4209C14.8203 2.17545 14.5015 2 12.3082 2C10.2761 2 9.41226 3.41383 8.52878 5.24954C3.78952 14.7276 3.33014 16.0709 3.29041 16.1879C2.16453 19.2829 4.48416 21.9999 7.29173 21.9999C8.26092 21.9999 9.99752 21.7294 12.3082 19.2142C14.9279 22.0615 16.8287 21.9999 17.3247 21.9999C20.1323 22.0021 22.4519 19.2829 21.3251 16.1879C21.326 16.0142 20.5743 14.4513 20.5743 14.4209H20.5738Z"></path>
+                            </svg></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">icon-1x1-large</div>
+                        <div class="fs-styleguide_row">
+                          <div class="icon-1x1-large w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Twitter</title>
+                              <path d="M19.9442 8.04822C19.9569 8.22588 19.9569 8.40357 19.9569 8.58123C19.9569 14 15.8326 20.2437 8.29444 20.2437C5.97209 20.2437 3.81473 19.5711 2 18.4036C2.32996 18.4417 2.64719 18.4544 2.98985 18.4544C4.90607 18.4544 6.67006 17.8072 8.0787 16.7031C6.27666 16.665 4.7665 15.4848 4.24618 13.8604C4.50001 13.8985 4.7538 13.9239 5.02032 13.9239C5.38833 13.9239 5.75638 13.8731 6.099 13.7843C4.22083 13.4036 2.81215 11.7538 2.81215 9.76143V9.71069C3.35782 10.0153 3.99239 10.2056 4.66493 10.231C3.56087 9.4949 2.83754 8.23857 2.83754 6.81724C2.83754 6.05583 3.04055 5.35786 3.3959 4.74871C5.41369 7.23603 8.44671 8.86037 11.8477 9.03807C11.7843 8.7335 11.7462 8.41627 11.7462 8.099C11.7462 5.84009 13.5736 4 15.8452 4C17.0254 4 18.0914 4.49492 18.8401 5.29442C19.7665 5.11676 20.6548 4.7741 21.4416 4.30457C21.137 5.25637 20.4898 6.05587 19.6396 6.56345C20.4645 6.47466 21.264 6.24618 22 5.92895C21.4417 6.7411 20.7437 7.46443 19.9442 8.04822V8.04822Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-large w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w">
+                              <title>Instagram</title>
+                              <path d="M12.0045 6.87222C9.16613 6.87222 6.87672 9.16163 6.87672 12C6.87672 14.8383 9.16613 17.1277 12.0045 17.1277C14.8428 17.1277 17.1322 14.8383 17.1322 12C17.1322 9.16163 14.8428 6.87222 12.0045 6.87222ZM12.0045 15.3337C10.1703 15.3337 8.67076 13.8386 8.67076 12C8.67076 10.1613 10.1658 8.66626 12.0045 8.66626C13.8431 8.66626 15.3382 10.1613 15.3382 12C15.3382 13.8386 13.8387 15.3337 12.0045 15.3337V15.3337ZM18.538 6.66247C18.538 7.32743 18.0025 7.8585 17.342 7.8585C16.677 7.8585 16.1459 7.32296 16.1459 6.66247C16.1459 6.00198 16.6815 5.46644 17.342 5.46644C18.0025 5.46644 18.538 6.00198 18.538 6.66247ZM21.9342 7.87635C21.8583 6.27421 21.4924 4.85504 20.3186 3.68579C19.1494 2.51654 17.7302 2.15059 16.1281 2.07026C14.4769 1.97654 9.52761 1.97654 7.87638 2.07026C6.2787 2.14613 4.85953 2.51207 3.68582 3.68133C2.51211 4.85058 2.15062 6.26975 2.07029 7.87189C1.97657 9.52312 1.97657 14.4724 2.07029 16.1236C2.14616 17.7257 2.51211 19.1449 3.68582 20.3142C4.85953 21.4834 6.27424 21.8494 7.87638 21.9297C9.52761 22.0234 14.4769 22.0234 16.1281 21.9297C17.7302 21.8538 19.1494 21.4879 20.3186 20.3142C21.4879 19.1449 21.8538 17.7257 21.9342 16.1236C22.0279 14.4724 22.0279 9.52758 21.9342 7.87635V7.87635ZM19.801 17.8953C19.4529 18.77 18.779 19.4439 17.8998 19.7965C16.5833 20.3186 13.4593 20.1981 12.0045 20.1981C10.5496 20.1981 7.42118 20.3142 6.10912 19.7965C5.23441 19.4484 4.56053 18.7745 4.20797 17.8953C3.68582 16.5788 3.80632 13.4548 3.80632 12C3.80632 10.5451 3.69028 7.41668 4.20797 6.10462C4.55606 5.22991 5.22995 4.55603 6.10912 4.20347C7.42564 3.68133 10.5496 3.80182 12.0045 3.80182C13.4593 3.80182 16.5878 3.68579 17.8998 4.20347C18.7745 4.55157 19.4484 5.22545 19.801 6.10462C20.3231 7.42115 20.2026 10.5451 20.2026 12C20.2026 13.4548 20.3231 16.5833 19.801 17.8953Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-large w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>LinkedIn</title>
+                              <path d="M20.4006 2H3.70878C2.79708 2 2 2.65642 2 3.5577V20.286C2 21.1925 2.79708 22 3.70878 22H20.3954C21.3123 22 22 21.1873 22 20.286V3.5577C22.0052 2.65642 21.3123 2 20.4006 2V2ZM8.19953 18.671H5.3342V9.76244H8.19953V18.671ZM6.86585 8.40792H6.84501C5.92811 8.40792 5.3342 7.72545 5.3342 6.87106C5.3342 6.00104 5.94374 5.3342 6.88148 5.3342C7.81922 5.3342 8.39229 5.99583 8.41313 6.87106C8.41313 7.72545 7.81922 8.40792 6.86585 8.40792ZM18.671 18.671H15.8057V13.7999C15.8057 12.633 15.3889 11.8359 14.3522 11.8359C13.5603 11.8359 13.0914 12.3725 12.883 12.8935C12.8049 13.081 12.7841 13.3363 12.7841 13.5968V18.671H9.91873V9.76244H12.7841V11.0023C13.2008 10.4084 13.852 9.55405 15.3681 9.55405C17.2488 9.55405 18.671 10.794 18.671 13.4665V18.671V18.671Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-large w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>YouTube</title>
+                              <path d="M21.8702 7.31296C21.8702 5.5549 20.577 4.14064 18.9792 4.14064C16.8148 4.03907 14.6075 4 12.3532 4C12.236 4 12.1188 4 12.0016 4C11.8844 4 11.7672 4 11.65 4C9.3997 4 7.18846 4.03907 5.0241 4.14064C3.43013 4.14064 2.13698 5.56272 2.13698 7.32077C2.03931 8.71159 1.99634 10.1024 2.00024 11.4932C1.99634 12.884 2.03931 14.2749 2.13307 15.6696C2.13307 17.4276 3.42622 18.8536 5.02019 18.8536C7.29394 18.9591 9.6263 19.006 11.9977 19.0021C14.373 19.0099 16.6976 18.963 18.9752 18.8536C20.5731 18.8536 21.8663 17.4276 21.8663 15.6696C21.96 14.2749 22.003 12.884 21.9991 11.4893C22.0069 10.0985 21.9639 8.70768 21.8702 7.31296V7.31296ZM10.0873 15.3258V7.64894L15.7521 11.4854L10.0873 15.3258Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-large w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Whatsapp</title>
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M18.118 5.8675C16.533 4.29473 14.4246 3.42857 12.1813 3.42857C9.93835 3.42857 7.83018 4.29473 6.24513 5.86746C4.66304 7.43732 3.7917 9.52379 3.7917 11.7425C3.7917 13.2575 4.20683 14.7402 4.99223 16.0303L5.33915 16.6001L5.12496 17.2318L4.26 19.7831L7.00339 18.9116L7.58656 18.7264L8.12304 19.0207C9.35813 19.6983 10.7614 20.0565 12.1813 20.0565C14.4245 20.0565 16.5329 19.1902 18.118 17.6173C19.7001 16.0474 20.5714 13.961 20.5714 11.7425C20.5714 9.52379 19.7001 7.43732 18.118 5.8675ZM2.36312 11.7425C2.36312 6.36165 6.75915 2 12.1813 2C17.6042 2 22 6.36165 22 11.7425C22 17.1227 17.6042 21.485 12.1813 21.485C10.4602 21.485 8.8425 21.0448 7.43589 20.2731L2 22L3.77201 16.7732C2.87795 15.3046 2.36312 13.5831 2.36312 11.7425ZM9.41834 6.97736C9.56325 6.97974 9.76473 6.98305 9.94091 7.45154C10.0036 7.61826 10.095 7.86514 10.1916 8.12572C10.3878 8.6552 10.6049 9.24123 10.6439 9.32614C10.702 9.45288 10.738 9.59962 10.6484 9.76234C10.6354 9.7859 10.6234 9.80819 10.6118 9.8295C10.5435 9.95567 10.4938 10.0476 10.3823 10.1678C10.3379 10.2154 10.292 10.2669 10.2461 10.3182C10.1565 10.4185 10.0671 10.5186 9.98979 10.5897C9.85943 10.7086 9.72332 10.8384 9.86033 11.0927C9.99729 11.3469 10.4698 12.1801 11.1897 12.8667C11.9643 13.6055 12.6497 13.9311 12.9964 14.0958C13.0638 14.1278 13.1184 14.1537 13.1584 14.1755C13.4046 14.3096 13.5515 14.2947 13.7042 14.1339C13.8562 13.9733 14.3577 13.431 14.5344 13.1889C14.711 12.9462 14.8764 12.9937 15.1032 13.085C15.3299 13.1766 16.5388 13.824 16.7851 13.9577C16.832 13.9832 16.876 14.0063 16.9168 14.0278C17.09 14.1188 17.2067 14.1801 17.2543 14.2658C17.3131 14.372 17.2945 14.8698 17.0636 15.4425C16.8326 16.0151 15.788 16.5377 15.327 16.5618C15.2481 16.566 15.1824 16.5792 15.1149 16.5928C14.7887 16.6583 14.4233 16.7318 12.3431 15.8281C10.0226 14.8197 8.55671 12.4768 8.25446 11.9937C8.22977 11.9542 8.21284 11.9272 8.20385 11.9143L8.20311 11.9132C8.0812 11.7391 7.23163 10.5257 7.27756 9.30466C7.32095 8.1587 7.91124 7.57952 8.18251 7.31335C8.20093 7.29527 8.21788 7.27864 8.23309 7.26337C8.47193 7.02288 8.74586 6.9798 8.91309 6.97707C8.92649 6.97686 8.93957 6.97664 8.95235 6.97643C9.12817 6.97353 9.24872 6.97155 9.3851 6.97658C9.3958 6.97699 9.40689 6.97717 9.41834 6.97736Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-large w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Facebook</title>
+                              <path d="M22.0025 12.0625C22.0025 6.505 17.525 2 12.0025 2C6.4775 2.00125 2 6.505 2 12.0638C2 17.085 5.6575 21.2475 10.4375 22.0025V14.9713H7.9V12.0638H10.44V9.845C10.44 7.32375 11.9338 5.93125 14.2175 5.93125C15.3125 5.93125 16.4562 6.1275 16.4562 6.1275V8.6025H15.195C13.9537 8.6025 13.5663 9.37875 13.5663 10.175V12.0625H16.3387L15.8962 14.97H13.565V22.0012C18.345 21.2462 22.0025 17.0838 22.0025 12.0625Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-large w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Messenger</title>
+                              <path d="M2 11.7003C2 6.12639 6.3664 2 12.0004 2C17.6343 2 22.0007 6.12639 22.0007 11.7003C22.0007 17.2743 17.6343 21.4007 12.0004 21.4007C10.9878 21.4007 10.0178 21.2669 9.10525 21.0169C8.92831 20.9677 8.7398 20.9809 8.57148 21.0544L6.58641 21.9319C6.46652 21.9848 6.33548 22.0075 6.20479 21.9978C6.07411 21.9882 5.94779 21.9467 5.83694 21.8768C5.72609 21.8069 5.63409 21.7109 5.56904 21.5971C5.50399 21.4834 5.46788 21.3554 5.46387 21.2244L5.40887 19.4456C5.40507 19.3373 5.37928 19.231 5.33308 19.133C5.28688 19.035 5.22122 18.9474 5.14011 18.8756C3.19504 17.1355 2 14.6154 2 11.7003ZM8.93274 9.87653L5.99514 14.5367C5.71388 14.9842 6.26265 15.488 6.68391 15.1692L9.84027 12.7741C9.94409 12.6953 10.0708 12.6524 10.2011 12.6519C10.3315 12.6515 10.4584 12.6935 10.5628 12.7716L12.8991 14.5242C13.0649 14.6485 13.2546 14.7371 13.4563 14.7845C13.6581 14.8318 13.8674 14.8368 14.0712 14.7993C14.2749 14.7617 14.4687 14.6823 14.6403 14.5661C14.8118 14.4499 14.9574 14.2994 15.068 14.1242L18.0056 9.46401C18.2881 9.0165 17.7381 8.51273 17.3168 8.83149L14.1604 11.2266C14.0566 11.3054 13.9299 11.3483 13.7996 11.3488C13.6692 11.3492 13.5423 11.3072 13.4379 11.2291L11.1016 9.47526C10.9358 9.35095 10.7461 9.26233 10.5444 9.21499C10.3426 9.16765 10.1333 9.16261 9.92953 9.20019C9.72577 9.23777 9.532 9.31716 9.36044 9.43335C9.18888 9.54954 9.04326 9.70126 8.93274 9.87653Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-large w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Slack</title>
+                              <path d="M6.2025 14.6375C6.2025 15.795 5.2575 16.7388 4.10125 16.7388C2.945 16.7388 2 15.795 2 14.6388C2 13.4825 2.945 12.5375 4.1 12.5375H6.2025V14.6375ZM7.26 14.6375C7.26 13.4825 8.205 12.5375 9.36125 12.5375C10.5175 12.5375 11.4625 13.4825 11.4625 14.6375V19.9C11.4625 21.055 10.5175 22 9.3625 22C8.80562 21.999 8.27179 21.7775 7.87778 21.384C7.48377 20.9904 7.26165 20.4569 7.26 19.9V14.6375ZM9.3625 6.2025C8.205 6.2025 7.26 5.2575 7.26 4.10125C7.26 2.945 8.205 2 9.3625 2C10.52 2 11.4625 2.945 11.4625 4.1V6.2025H9.3625ZM9.3625 7.26C10.5175 7.26 11.4625 8.205 11.4625 9.36125C11.4625 10.5175 10.5175 11.4625 9.3625 11.4625H4.1C2.94625 11.4625 2 10.5175 2 9.3625C2 8.205 2.945 7.26 4.1 7.26H9.3625ZM17.7987 9.3625C17.7987 8.205 18.7425 7.26 19.8988 7.26C21.055 7.26 22 8.205 22 9.36125C22 10.5175 21.055 11.4625 19.9 11.4625H17.7987V9.3625ZM16.7388 9.3625C16.7388 10.5175 15.795 11.4625 14.6388 11.4625C14.0821 11.4612 13.5486 11.2395 13.1548 10.846C12.7611 10.4525 12.5392 9.91916 12.5375 9.3625V4.1C12.5375 2.94625 13.4825 2 14.6375 2C15.795 2 16.7388 2.945 16.7388 4.1V9.3625ZM14.6375 17.7975C15.795 17.7975 16.74 18.7425 16.74 19.8988C16.74 21.055 15.795 22 14.6375 22C13.48 22 12.5362 21.055 12.5362 19.9V17.7975H14.6375ZM14.6375 16.7388C13.4825 16.7388 12.5375 15.795 12.5375 14.6388C12.5375 13.4825 13.4825 12.5375 14.6375 12.5375H19.9C21.055 12.5375 22 13.4825 22 14.6375C22 15.795 21.055 16.7388 19.9 16.7388H14.6375Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-large w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Skype</title>
+                              <path d="M7.83803 2C8.93803 2 10.0043 2.30875 10.923 2.8775C12.2953 2.73144 13.6828 2.89331 14.9846 3.35131C16.2863 3.8093 17.4695 4.5519 18.448 5.525C19.3058 6.38022 19.9866 7.39616 20.4514 8.51471C20.9161 9.63326 21.1559 10.8325 21.1568 12.0437C21.1568 12.4737 21.1268 12.9025 21.0668 13.3262C21.557 14.1967 21.8153 15.1785 21.8168 16.1775C21.8168 16.9428 21.6655 17.7006 21.3716 18.4072C21.0777 19.1138 20.647 19.7554 20.1043 20.295C19.008 21.3882 17.5225 22.0015 15.9743 22C14.9243 22 13.9018 21.7175 13.0118 21.195C11.6217 21.361 10.2122 21.2102 8.88864 20.7541C7.56512 20.298 6.36195 19.5483 5.36928 18.5612C4.51176 17.7061 3.83116 16.6903 3.36638 15.572C2.9016 14.4537 2.66174 13.2548 2.66053 12.0437C2.66053 11.59 2.69303 11.1387 2.76053 10.6925C2.12989 9.58502 1.88124 8.30079 2.05293 7.03797C2.22462 5.77514 2.80711 4.60391 3.71053 3.705C4.80646 2.61353 6.29129 2.0005 7.83803 2ZM8.39678 10.7625C8.62178 11.1487 8.93428 11.4775 9.30803 11.7237C9.80313 12.0477 10.3295 12.3212 10.8793 12.54C11.4943 12.7962 11.9705 13.015 12.3105 13.1937C12.5968 13.3337 12.8568 13.5237 13.0793 13.7537C13.248 13.9312 13.3418 14.1675 13.3418 14.4137C13.3488 14.5868 13.3145 14.7591 13.2417 14.9163C13.1688 15.0734 13.0596 15.211 12.923 15.3175C12.5593 15.5625 12.123 15.6787 11.6855 15.6475C11.2358 15.6526 10.7899 15.5649 10.3755 15.39C10.1512 15.2903 9.92944 15.1849 9.71053 15.0737C9.4844 14.9536 9.23281 14.8893 8.97678 14.8862C8.74756 14.8767 8.52343 14.9555 8.35053 15.1062C8.26789 15.1848 8.20329 15.2804 8.16121 15.3863C8.11912 15.4923 8.10055 15.6061 8.10678 15.72C8.10153 15.9356 8.16645 16.147 8.29178 16.3225C8.44294 16.5142 8.6386 16.6661 8.86178 16.765C9.73308 17.1428 10.6776 17.3218 11.6268 17.2887C12.3179 17.3025 13.0058 17.1903 13.6568 16.9575C14.1966 16.7659 14.6668 16.4172 15.0068 15.9562C15.3405 15.4687 15.5093 14.8875 15.4893 14.2975C15.5023 13.8154 15.3816 13.339 15.1405 12.9212C14.8958 12.5241 14.5663 12.186 14.1755 11.9312C13.6803 11.6118 13.1548 11.3417 12.6068 11.125C12.5482 11.0964 12.4877 11.0721 12.4255 11.0525C11.9979 10.8791 11.5756 10.6928 11.1593 10.4937C10.9066 10.3751 10.6778 10.2111 10.4843 10.01C10.3216 9.83885 10.2319 9.61111 10.2343 9.375C10.2263 9.19508 10.2667 9.0163 10.3514 8.85734C10.436 8.69837 10.5618 8.56504 10.7155 8.47125C11.0806 8.25362 11.5008 8.14638 11.9255 8.1625C12.2505 8.15875 12.5755 8.2 12.8905 8.2825C13.233 8.38125 13.568 8.50375 13.893 8.64875C14.0243 8.71 14.168 8.7425 14.313 8.74375C14.4188 8.74635 14.524 8.72654 14.6216 8.68561C14.7192 8.64467 14.807 8.58355 14.8793 8.50625C15.0335 8.33755 15.1144 8.11456 15.1043 7.88625C15.108 7.6687 15.0325 7.45721 14.8918 7.29125C14.6994 7.08954 14.4609 6.93767 14.1968 6.84875C13.9101 6.74338 13.6136 6.66676 13.3118 6.62C12.8895 6.55089 12.4621 6.51827 12.0343 6.5225C11.3805 6.51834 10.7309 6.62746 10.1143 6.845C9.54712 7.03628 9.04077 7.37442 8.64678 7.825C8.26775 8.27379 8.06748 8.84656 8.08428 9.43375C8.07178 9.89625 8.17928 10.3537 8.39678 10.7625Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-large w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Discord</title>
+                              <path d="M18.9313 5.26461C17.6344 4.66945 16.266 4.24467 14.8601 4.00087C14.8473 3.99872 14.8343 4.00058 14.8226 4.00617C14.811 4.01177 14.8014 4.02083 14.7951 4.03212C14.6188 4.34461 14.4238 4.75336 14.2876 5.07336C12.7721 4.84337 11.2306 4.84337 9.71513 5.07336C9.56315 4.71689 9.39121 4.36926 9.20014 4.03212C9.19372 4.02096 9.18408 4.012 9.17248 4.00642C9.16088 4.00084 9.14786 3.99891 9.13514 4.00087C7.7289 4.24337 6.36017 4.66836 5.06393 5.26461C5.05284 5.26884 5.04356 5.27679 5.03768 5.2871C2.44521 9.16081 1.73396 12.9395 2.08271 16.6707C2.08396 16.6882 2.09521 16.7057 2.10896 16.717C3.6186 17.8352 5.30717 18.689 7.10266 19.242C7.11533 19.246 7.12896 19.2458 7.14154 19.2415C7.15413 19.2373 7.16503 19.2291 7.17266 19.2182C7.55765 18.6932 7.90015 18.1395 8.19515 17.557C8.20129 17.545 8.2034 17.5313 8.20115 17.518C8.19889 17.5047 8.1924 17.4925 8.18265 17.4832C8.17619 17.4771 8.16852 17.4724 8.16015 17.4695C7.6216 17.2625 7.10003 17.0138 6.60016 16.7257C6.5862 16.7178 6.57582 16.7048 6.57116 16.6895C6.56651 16.6741 6.56794 16.6576 6.57516 16.6432C6.57942 16.6339 6.58585 16.6258 6.59391 16.6195C6.69891 16.5407 6.80391 16.4582 6.90391 16.3757C6.91274 16.3686 6.92334 16.3641 6.93457 16.3625C6.9458 16.361 6.95724 16.3625 6.96766 16.367C10.2414 17.862 13.7851 17.862 17.0188 16.367C17.0296 16.3623 17.0415 16.3607 17.0531 16.3622C17.0648 16.3637 17.0758 16.3684 17.0851 16.3757C17.1851 16.4582 17.2901 16.5407 17.395 16.6195C17.4036 16.6257 17.4104 16.6339 17.4149 16.6434C17.4195 16.6529 17.4216 16.6634 17.4211 16.674C17.4206 16.6845 17.4175 16.6947 17.4121 16.7038C17.4067 16.7128 17.3991 16.7203 17.39 16.7257C16.8913 17.0165 16.3691 17.2648 15.8288 17.4682C15.8202 17.4713 15.8124 17.4763 15.8059 17.4828C15.7994 17.4893 15.7944 17.4971 15.7913 17.5057C15.7884 17.5141 15.7873 17.5229 15.7879 17.5317C15.7886 17.5405 15.791 17.5491 15.7951 17.557C16.0951 18.1382 16.4388 18.6932 16.8163 19.2182C16.8239 19.2291 16.8348 19.2373 16.8474 19.2415C16.86 19.2458 16.8736 19.246 16.8863 19.242C18.6848 18.6907 20.3761 17.8368 21.8875 16.717C21.8951 16.7117 21.9014 16.7049 21.9059 16.6969C21.9105 16.6889 21.9131 16.6799 21.9138 16.6707C22.3312 12.357 21.215 8.60957 18.9563 5.28835C18.954 5.28287 18.9506 5.27792 18.9463 5.27383C18.942 5.26974 18.9369 5.2666 18.9313 5.26461ZM8.68389 14.3983C7.69765 14.3983 6.88641 13.4933 6.88641 12.3833C6.88641 11.272 7.68265 10.3671 8.68389 10.3671C9.69263 10.3671 10.4964 11.2795 10.4814 12.3833C10.4814 13.4933 9.68513 14.3983 8.68389 14.3983ZM15.3288 14.3983C14.3438 14.3983 13.5313 13.4933 13.5313 12.3833C13.5313 11.272 14.3276 10.3671 15.3288 10.3671C16.3376 10.3671 17.1426 11.2795 17.1263 12.3833C17.1263 13.4933 16.3376 14.3983 15.3288 14.3983Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-large w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Pinterest</title>
+                              <path d="M12.0064 2C9.67473 1.99852 7.41588 2.81185 5.62037 4.29934C3.82486 5.78684 2.60558 7.855 2.17335 10.1462C1.74111 12.4374 2.1231 14.8077 3.25326 16.8471C4.38342 18.8865 6.1907 20.4669 8.36261 21.315C8.27511 20.5238 8.19511 19.3075 8.39636 18.4438C8.57886 17.6625 9.56886 13.4725 9.56886 13.4725C9.56886 13.4725 9.27011 12.8738 9.27011 11.9888C9.27011 10.5975 10.0764 9.56 11.0801 9.56C11.9326 9.56 12.3451 10.2 12.3451 10.9688C12.3451 11.8263 11.7989 13.1088 11.5164 14.2975C11.2814 15.2925 12.0164 16.105 12.9976 16.105C14.7751 16.105 16.1414 14.23 16.1414 11.525C16.1414 9.13125 14.4201 7.4575 11.9639 7.4575C9.11886 7.4575 7.44886 9.59125 7.44886 11.7963C7.44886 12.6563 7.78011 13.5775 8.19261 14.0788C8.22813 14.1165 8.25325 14.1629 8.26552 14.2133C8.27779 14.2637 8.27679 14.3164 8.26261 14.3663C8.18636 14.6813 8.01761 15.3613 7.98511 15.5C7.94136 15.6825 7.84011 15.7213 7.65011 15.6338C6.40011 15.0525 5.62011 13.2263 5.62011 11.7588C5.62011 8.605 7.91261 5.70875 12.2276 5.70875C15.6964 5.70875 18.3926 8.18 18.3926 11.4838C18.3926 14.93 16.2189 17.7038 13.2039 17.7038C12.1901 17.7038 11.2376 17.1775 10.9114 16.555L10.2889 18.9325C10.0626 19.8013 9.45261 20.89 9.04511 21.5538C10.4201 21.9789 11.8706 22.1022 13.2976 21.9153C14.7246 21.7284 16.0945 21.2357 17.3136 20.4709C18.5327 19.706 19.5724 18.687 20.3615 17.4835C21.1507 16.28 21.6708 14.9203 21.8863 13.4973C22.1018 12.0744 22.0076 10.6217 21.6102 9.23844C21.2127 7.85522 20.5214 6.57408 19.5834 5.48255C18.6455 4.39101 17.4829 3.5148 16.1752 2.91377C14.8676 2.31274 13.4455 2.00105 12.0064 2Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-large w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Reddit</title>
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M19.0711 19.0711C20.9464 17.1957 22 14.6522 22 12C22 9.34784 20.9464 6.8043 19.0711 4.92893C17.1957 3.05357 14.6522 2 12 2C9.34784 2 6.8043 3.05357 4.92893 4.92893C3.05357 6.8043 2 9.34784 2 12C2 14.6522 3.05357 17.1957 4.92893 19.0711C6.8043 20.9464 9.34784 22 12 22C14.6522 22 17.1957 20.9464 19.0711 19.0711ZM16.2 10.95C16.4625 10.6987 16.8212 10.5437 17.215 10.5437C18.015 10.5437 18.6712 11.1875 18.6712 12C18.6712 12.5962 18.3125 13.11 17.8113 13.3363C17.835 13.48 17.8475 13.635 17.8475 13.7775C17.8475 16.0337 15.2338 17.8475 12.0125 17.8475C8.79 17.8475 6.17625 16.0212 6.17625 13.7775C6.17625 13.6237 6.1875 13.48 6.2125 13.3363C5.90882 13.1999 5.66113 12.9635 5.5108 12.6665C5.36047 12.3695 5.31662 12.03 5.38656 11.7045C5.45651 11.3791 5.63602 11.0875 5.8951 10.8785C6.15418 10.6695 6.47713 10.5558 6.81 10.5562C7.2025 10.5562 7.56 10.7113 7.8225 10.9613C8.8375 10.2338 10.235 9.76875 11.785 9.72125L12.525 6.23625C12.5294 6.20211 12.5413 6.16938 12.5599 6.14042C12.5785 6.11145 12.6033 6.08697 12.6325 6.06875C12.6605 6.05063 12.6918 6.03821 12.7246 6.03221C12.7575 6.0262 12.7911 6.02673 12.8238 6.03375L15.2463 6.54625C15.331 6.37146 15.463 6.22396 15.6275 6.12054C15.7919 6.01712 15.982 5.96193 16.1762 5.96125C16.3793 5.96147 16.5779 6.02129 16.7473 6.13328C16.9167 6.24527 17.0495 6.40451 17.1292 6.59127C17.209 6.77802 17.2322 6.98408 17.196 7.18389C17.1597 7.38371 17.0656 7.56849 16.9254 7.71534C16.7851 7.8622 16.6048 7.96466 16.4069 8.01003C16.209 8.05539 16.0021 8.04168 15.8118 7.97057C15.6216 7.89947 15.4564 7.77411 15.3368 7.61002C15.2172 7.44594 15.1483 7.25035 15.1388 7.0475L12.9662 6.5825L12.2987 9.70875C13.825 9.76875 15.1987 10.2337 16.2 10.95ZM8.97538 12.3042C9.16988 12.1097 9.43358 12.0003 9.70864 12C9.97774 12.0093 10.2327 12.1228 10.4198 12.3165C10.6068 12.5101 10.7114 12.7689 10.7114 13.0381C10.7114 13.3074 10.6068 13.5661 10.4198 13.7598C10.2327 13.9534 9.97774 14.0669 9.70864 14.0763C9.13614 14.0875 8.67114 13.6112 8.67114 13.0375C8.67147 12.7624 8.78089 12.4987 8.97538 12.3042ZM14.4824 15.795C13.7661 16.5112 12.4061 16.5588 12.0124 16.5588V16.5575C11.6061 16.5575 10.2461 16.4987 9.54114 15.795C9.51551 15.7702 9.49513 15.7405 9.48122 15.7076C9.4673 15.6747 9.46013 15.6394 9.46013 15.6038C9.46013 15.5681 9.4673 15.5328 9.48122 15.4999C9.49513 15.467 9.51551 15.4373 9.54114 15.4125C9.56597 15.3869 9.59569 15.3665 9.62854 15.3526C9.6614 15.3387 9.69671 15.3315 9.73239 15.3315C9.76807 15.3315 9.80339 15.3387 9.83624 15.3526C9.8691 15.3665 9.89882 15.3869 9.92364 15.4125C10.3774 15.8662 11.3311 16.0212 12.0124 16.0212C12.6924 16.0212 13.6586 15.8662 14.0999 15.4125C14.1247 15.3869 14.1544 15.3665 14.1873 15.3526C14.2201 15.3387 14.2555 15.3315 14.2911 15.3315C14.3268 15.3315 14.3621 15.3387 14.395 15.3526C14.4278 15.3665 14.4576 15.3869 14.4824 15.4125C14.5288 15.4654 14.5544 15.5334 14.5544 15.6038C14.5544 15.6741 14.5288 15.7421 14.4824 15.795ZM14.2911 14.0875C13.7186 14.0875 13.2524 13.6225 13.2524 13.05H13.2536C13.2667 12.7836 13.3817 12.5325 13.5749 12.3486C13.768 12.1648 14.0245 12.0622 14.2911 12.0622C14.5578 12.0622 14.8143 12.1648 15.0074 12.3486C15.2005 12.5325 15.3156 12.7836 15.3286 13.05C15.3286 13.6112 14.8636 14.0875 14.2911 14.0875Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-large w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Twitch</title>
+                              <path fill-rule="evenodd" clip-rule="evenodd" d="M3 5.57125L6.57125 2H20.1425V12L13.7125 18.4287H10.8575L7.28625 22V18.4287H3V5.57125ZM15.8575 14.1425L18.7137 11.2863V3.42875H7.28625V14.1425H10.5V16.6425L13 14.1425H15.8575ZM15.1425 5.92876H16.5712V10.2125H15.1425V5.92876ZM11.2137 5.92876H12.6425V10.2125H11.2137V5.92876Z"></path>
+                            </svg></div>
+                          <div class="icon-1x1-large w-embed"><svg viewbox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                              <title>Airbnb</title>
+                              <path d="M12.3082 17.2285C11.1814 15.8147 10.5189 14.5754 10.2993 13.5151C9.29261 9.58657 15.3265 9.58657 14.3198 13.5151C14.0765 14.5977 13.414 15.8365 12.3109 17.2285H12.3082ZM18.4756 20.4977C16.5979 21.3151 14.7404 20.012 13.1497 18.2446C17.7881 12.4379 15.2082 9.31603 12.3082 9.31603C9.85645 9.31603 8.50646 11.3924 9.03681 13.8026C9.34618 15.1057 10.1631 16.5879 11.4667 18.2446C10.0145 19.8539 8.7636 20.5968 7.66539 20.6963C5.43326 21.028 3.68729 18.8633 4.48237 16.6298C5.15647 14.8816 9.46985 6.30935 9.65511 5.84596C10.3582 4.50356 10.7962 3.28348 12.306 3.28348C13.7497 3.28348 14.2435 4.4415 15.0011 5.95623C16.6082 9.10889 18.9899 13.8794 20.1278 16.6298C20.7158 18.1062 20.0667 19.8124 18.4756 20.4977ZM20.5738 14.4209C14.8203 2.17545 14.5015 2 12.3082 2C10.2761 2 9.41226 3.41383 8.52878 5.24954C3.78952 14.7276 3.33014 16.0709 3.29041 16.1879C2.16453 19.2829 4.48416 21.9999 7.29173 21.9999C8.26092 21.9999 9.99752 21.7294 12.3082 19.2142C14.9279 22.0615 16.8287 21.9999 17.3247 21.9999C20.1323 22.0021 22.4519 19.2829 21.3251 16.1879C21.326 16.0142 20.5743 14.4513 20.5743 14.4209H20.5738Z"></path>
+                            </svg></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="fs-styleguide_structure">
+          <div class="padding-section-large">
+            <div class="padding-global">
+              <div class="container-large">
+                <div class="fs-styleguide_section is-vertical">
+                  <div class="fs-styleguide_section-header">
+                    <h2 class="fs-styleguide_heading-medium">Structure Classes</h2>
+                    <p class="text-size-medium">Defined and flexible core structure we can use on all or most pages.<br></p>
+                  </div>
+                  <div class="fs-styleguide_item-wrapper">
+                    <div class="fs-styleguide_1-col">
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">page-wrapper</div>
+                        <div class="page-wrapper">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">main-wrapper</div>
+                        <main class="main-wrapper">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </main>
+                      </div>
+                      <div class="fs-styleguide_item is-stretch">
+                        <div id="w-node-_28c0a946-2c3b-3660-6af8-645df4a072b3-85aeb999" class="fs-styleguide_label">container-small</div>
+                        <div class="container-small">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_item is-stretch">
+                        <div id="w-node-_28c0a946-2c3b-3660-6af8-645df4a072b8-85aeb999" class="fs-styleguide_label">container-medium</div>
+                        <div class="container-medium">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_item is-stretch">
+                        <div id="w-node-_28c0a946-2c3b-3660-6af8-645df4a072bd-85aeb999" class="fs-styleguide_label">container-large</div>
+                        <div class="container-large">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_item is-stretch">
+                        <div id="w-node-_28c0a946-2c3b-3660-6af8-645df4a072c2-85aeb999" class="fs-styleguide_label">padding-global</div>
+                        <div class="padding-global">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_item is-stretch">
+                        <div class="fs-styleguide_spacing">
+                          <div id="w-node-_28c0a946-2c3b-3660-6af8-645df4a072c8-85aeb999" class="fs-styleguide_label">padding-section-small</div>
+                          <div class="padding-section-small">
+                            <div class="fs-styleguide_empty-box"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_item is-stretch">
+                        <div class="fs-styleguide_spacing">
+                          <div id="w-node-_28c0a946-2c3b-3660-6af8-645df4a072ce-85aeb999" class="fs-styleguide_label">padding-section-medium</div>
+                          <div class="padding-section-medium">
+                            <div class="fs-styleguide_empty-box"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_item is-stretch">
+                        <div class="fs-styleguide_spacing">
+                          <div id="w-node-_28c0a946-2c3b-3660-6af8-645df4a072d4-85aeb999" class="fs-styleguide_label">padding-section-large</div>
+                          <div class="padding-section-large">
+                            <div class="fs-styleguide_empty-box"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_row">
+                          <div class="fs-styleguide_label">button-group</div>
+                        </div>
+                        <div class="button-group">
+                          <div class="fs-styleguide_empty-box"></div>
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="fs-styleguide_max-width">
+          <div class="padding-section-large">
+            <div class="padding-global">
+              <div class="container-large">
+                <div class="fs-styleguide_section is-vertical">
+                  <div class="fs-styleguide_section-header">
+                    <h2 class="fs-styleguide_heading-medium">Max widths</h2>
+                    <p class="text-size-medium">Use the max-width CSS property to contain inner content to a maximum width.<br></p>
+                  </div>
+                  <div class="fs-styleguide_item-wrapper">
+                    <div class="fs-styleguide_1-col">
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">max-width-full</div>
+                        <div class="max-width-full">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">max-width-full-tablet</div>
+                        <main class="max-width-full-tablet">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </main>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">max-width-full-mobile-portrait</div>
+                        <main class="max-width-full-mobile-portrait">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </main>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">max-width-full-mobile-landscape</div>
+                        <main class="max-width-full-mobile-landscape">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </main>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">max-width-xxlarge</div>
+                        <main class="max-width-xxlarge">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </main>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">max-width-xlarge</div>
+                        <main class="max-width-xlarge">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </main>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">max-width-large</div>
+                        <main class="max-width-large">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </main>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">max-width-medium</div>
+                        <main class="max-width-medium">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </main>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">max-width-small</div>
+                        <main class="max-width-small">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </main>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">max-width-xsmall</div>
+                        <main class="max-width-xsmall">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </main>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">max-width-xxsmall</div>
+                        <main class="max-width-xxsmall">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </main>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="fs-styleguide_paddings">
+          <div class="padding-section-large">
+            <div class="padding-global">
+              <div class="container-large">
+                <div class="fs-styleguide_section">
+                  <div class="fs-styleguide_section-header">
+                    <h2 class="fs-styleguide_heading-medium">Paddings</h2>
+                    <p class="text-size-medium">Utility spacing system - padding classes. [padding-direction] + [padding-size].<br></p>
+                  </div>
+                  <div class="fs-styleguide_item-wrapper">
+                    <div class="fs-styleguide_item-header">
+                      <h3>Direction Classes</h3>
+                    </div>
+                    <div class="fs-styleguide_3-col is-align-start">
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc31-85aeb999" class="fs-styleguide_label">padding-bottom</div>
+                        <div class="padding-bottom">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc36-85aeb999" class="fs-styleguide_label">padding-top</div>
+                        <div class="padding-top">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc3b-85aeb999" class="fs-styleguide_label">padding-vertical</div>
+                        <div class="padding-vertical">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc40-85aeb999" class="fs-styleguide_label">padding-horizontal</div>
+                        <div class="padding-horizontal">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc45-85aeb999" class="fs-styleguide_label">padding-left</div>
+                        <div class="padding-left">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc4a-85aeb999" class="fs-styleguide_label">padding-right</div>
+                        <div class="padding-right">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fs-styleguide_item-wrapper">
+                    <div class="fs-styleguide_item-header">
+                      <h3>Size Classes</h3>
+                    </div>
+                    <div class="fs-styleguide_2-col is-align-start">
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc54-85aeb999" class="fs-styleguide_label">padding-0</div>
+                        <div class="padding-0">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc59-85aeb999" class="fs-styleguide_label">padding-tiny</div>
+                        <div class="padding-tiny">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc5e-85aeb999" class="fs-styleguide_label">padding-xxsmall</div>
+                        <div class="padding-xxsmall">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc63-85aeb999" class="fs-styleguide_label">padding-xsmall</div>
+                        <div class="padding-xsmall">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc68-85aeb999" class="fs-styleguide_label">padding-small</div>
+                        <div class="padding-small">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc6d-85aeb999" class="fs-styleguide_label">padding-medium</div>
+                        <div class="padding-medium">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc72-85aeb999" class="fs-styleguide_label">padding-large</div>
+                        <div class="padding-large">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc77-85aeb999" class="fs-styleguide_label">padding-xlarge</div>
+                        <div class="padding-xlarge">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc7c-85aeb999" class="fs-styleguide_label">padding-xxlarge</div>
+                        <div class="padding-xxlarge">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc81-85aeb999" class="fs-styleguide_label">padding-huge</div>
+                        <div class="padding-huge">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc86-85aeb999" class="fs-styleguide_label">padding-xhuge</div>
+                        <div class="padding-xhuge">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc8a-85aeb999" class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc8b-85aeb999" class="fs-styleguide_label">padding-xxhuge</div>
+                        <div class="padding-xxhuge">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc90-85aeb999" class="fs-styleguide_label">padding-custom1</div>
+                        <div class="padding-custom1">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc95-85aeb999" class="fs-styleguide_label">padding-custom2</div>
+                        <div class="padding-custom2">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cc9a-85aeb999" class="fs-styleguide_label">padding-custom3</div>
+                        <div class="padding-custom3">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="fs-styleguide_margins">
+          <div class="padding-section-large">
+            <div class="padding-global">
+              <div class="container-large">
+                <div class="fs-styleguide_section">
+                  <div class="fs-styleguide_section-header">
+                    <h2 class="fs-styleguide_heading-medium">Margins</h2>
+                    <p class="text-size-medium">Utility spacing system - padding classes. [margin-direction] + [margin-size].<br></p>
+                  </div>
+                  <div class="fs-styleguide_item-wrapper">
+                    <div class="fs-styleguide_item-header">
+                      <h3>Direction Classes</h3>
+                    </div>
+                    <div class="fs-styleguide_3-col is-align-start">
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627ccaf-85aeb999" class="fs-styleguide_label">margin-bottom</div>
+                        <div class="margin-bottom">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627ccb4-85aeb999" class="fs-styleguide_label">margin-top</div>
+                        <div class="margin-top">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627ccb9-85aeb999" class="fs-styleguide_label">margin-vertical</div>
+                        <div class="margin-vertical">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627ccbe-85aeb999" class="fs-styleguide_label">margin-horizontal</div>
+                        <div class="margin-horizontal">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627ccc3-85aeb999" class="fs-styleguide_label">margin-left</div>
+                        <div class="margin-left">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627ccc8-85aeb999" class="fs-styleguide_label">margin-right</div>
+                        <div class="margin-right">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="fs-styleguide_item-wrapper">
+                    <div class="fs-styleguide_item-header">
+                      <h3>Size Classes</h3>
+                    </div>
+                    <div class="fs-styleguide_2-col is-align-start">
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627ccd2-85aeb999" class="fs-styleguide_label">margin-0</div>
+                        <div class="margin-0">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627ccd7-85aeb999" class="fs-styleguide_label">margin-tiny</div>
+                        <div class="margin-tiny">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627ccdc-85aeb999" class="fs-styleguide_label">margin-xxsmall</div>
+                        <div class="margin-xxsmall">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cce1-85aeb999" class="fs-styleguide_label">margin-xsmall</div>
+                        <div class="margin-xsmall">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cce6-85aeb999" class="fs-styleguide_label">margin-small</div>
+                        <div class="margin-small">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cceb-85aeb999" class="fs-styleguide_label">margin-medium</div>
+                        <div class="margin-medium">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627ccf0-85aeb999" class="fs-styleguide_label">margin-large</div>
+                        <div class="margin-large">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627ccf5-85aeb999" class="fs-styleguide_label">margin-xlarge</div>
+                        <div class="margin-xlarge">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627ccfa-85aeb999" class="fs-styleguide_label">margin-xxlarge</div>
+                        <div class="margin-xxlarge">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627ccff-85aeb999" class="fs-styleguide_label">margin-huge</div>
+                        <div class="margin-huge">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cd04-85aeb999" class="fs-styleguide_label">margin-xhuge</div>
+                        <div class="margin-xhuge">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cd08-85aeb999" class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cd09-85aeb999" class="fs-styleguide_label">margin-xxhuge</div>
+                        <div class="margin-xxhuge">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cd0e-85aeb999" class="fs-styleguide_label">margin-custom1</div>
+                        <div class="margin-custom1">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cd13-85aeb999" class="fs-styleguide_label">margin-custom2</div>
+                        <div class="margin-custom2">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cd18-85aeb999" class="fs-styleguide_label">margin-custom3</div>
+                        <div class="margin-custom3">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="fs-styleguide_spacers">
+          <div class="padding-section-large">
+            <div class="padding-global">
+              <div class="container-large">
+                <div class="fs-styleguide_section">
+                  <div class="fs-styleguide_section-header">
+                    <h2 class="fs-styleguide_heading-medium">Spacers</h2>
+                    <p class="text-size-medium">Unified padding system for the project.<br></p>
+                  </div>
+                  <div class="fs-styleguide_item-wrapper">
+                    <div class="fs-styleguide_1-col">
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_30684373-af34-3818-02a4-e58b3ffef3e5-85aeb999" class="fs-styleguide_label">spacer-tiny</div>
+                        <div class="fs-styleguide_spacer-box">
+                          <div class="spacer-tiny"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_30684373-af34-3818-02a4-e58b3ffef3ea-85aeb999" class="fs-styleguide_label">spacer-xxsmall</div>
+                        <div class="fs-styleguide_spacer-box">
+                          <div class="spacer-xxsmall"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_30684373-af34-3818-02a4-e58b3ffef3ef-85aeb999" class="fs-styleguide_label">spacer-xsmall</div>
+                        <div class="fs-styleguide_spacer-box">
+                          <div class="spacer-xsmall"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_30684373-af34-3818-02a4-e58b3ffef3f4-85aeb999" class="fs-styleguide_label">spacer-small</div>
+                        <div class="fs-styleguide_spacer-box">
+                          <div class="spacer-small"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_30684373-af34-3818-02a4-e58b3ffef3f9-85aeb999" class="fs-styleguide_label">spacer-medium</div>
+                        <div class="fs-styleguide_spacer-box">
+                          <div class="spacer-medium"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_30684373-af34-3818-02a4-e58b3ffef3fe-85aeb999" class="fs-styleguide_label">spacer-large</div>
+                        <div class="fs-styleguide_spacer-box">
+                          <div class="spacer-large"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_30684373-af34-3818-02a4-e58b3ffef403-85aeb999" class="fs-styleguide_label">spacer-xlarge</div>
+                        <div class="fs-styleguide_spacer-box">
+                          <div class="spacer-xlarge"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_30684373-af34-3818-02a4-e58b3ffef408-85aeb999" class="fs-styleguide_label">spacer-xxlarge</div>
+                        <div class="fs-styleguide_spacer-box">
+                          <div class="spacer-xxlarge"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_30684373-af34-3818-02a4-e58b3ffef40d-85aeb999" class="fs-styleguide_label">spacer-huge</div>
+                        <div class="fs-styleguide_spacer-box">
+                          <div class="spacer-96"></div>
+                        </div>
+                      </div>
+                      <div class="fs-styleguide_spacing">
+                        <div id="w-node-_30684373-af34-3818-02a4-e58b3ffef412-85aeb999" class="fs-styleguide_label">spacer-xhuge</div>
+                        <div class="fs-styleguide_spacer-box">
+                          <div class="spacer-xhuge"></div>
+                        </div>
+                      </div>
+                      <div id="w-node-_30684373-af34-3818-02a4-e58b3ffef416-85aeb999" class="fs-styleguide_spacing">
+                        <div id="w-node-_30684373-af34-3818-02a4-e58b3ffef417-85aeb999" class="fs-styleguide_label">spacer-xxhuge</div>
+                        <div class="fs-styleguide_spacer-box">
+                          <div id="w-node-_30684373-af34-3818-02a4-e58b3ffef41a-85aeb999" class="spacer-xxhuge"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="fs-styleguide_spacing-all">
+          <div class="fs-styleguide_spacing-sizes">
+            <div class="margin-0"></div>
+            <div class="margin-tiny"></div>
+            <div class="margin-xxsmall"></div>
+            <div class="margin-xsmall"></div>
+            <div class="margin-small"></div>
+            <div class="margin-medium"></div>
+            <div class="margin-large"></div>
+            <div class="margin-xlarge"></div>
+            <div class="margin-xxlarge"></div>
+            <div class="margin-huge"></div>
+            <div class="margin-xhuge"></div>
+            <div class="margin-xxhuge"></div>
+            <div class="margin-custom1"></div>
+            <div class="margin-custom2"></div>
+            <div class="margin-custom3"></div>
+            <div class="padding-0"></div>
+            <div class="padding-tiny"></div>
+            <div class="padding-xxsmall"></div>
+            <div class="padding-xsmall"></div>
+            <div class="padding-small"></div>
+            <div class="padding-medium"></div>
+            <div class="padding-large"></div>
+            <div class="padding-xlarge"></div>
+            <div class="padding-xxlarge"></div>
+            <div class="padding-huge"></div>
+            <div class="padding-xhuge"></div>
+            <div class="padding-xxhuge"></div>
+            <div class="padding-custom1"></div>
+            <div class="padding-custom2"></div>
+            <div class="padding-custom3"></div>
+          </div>
+          <div class="fs-styleguide_spacing-directions">
+            <div class="margin-top"></div>
+            <div class="margin-bottom"></div>
+            <div class="margin-left"></div>
+            <div class="margin-right"></div>
+            <div class="margin-vertical"></div>
+            <div class="margin-horizontal"></div>
+            <div class="padding-top"></div>
+            <div class="padding-bottom"></div>
+            <div class="padding-left"></div>
+            <div class="padding-right"></div>
+            <div class="padding-vertical"></div>
+            <div class="padding-horizontal"></div>
+          </div>
+        </div>
+        <section class="fs-styleguide_utility-classes">
+          <div class="padding-section-large">
+            <div class="padding-global">
+              <div class="container-large">
+                <div class="fs-styleguide_section">
+                  <div class="fs-styleguide_section-header">
+                    <h2 class="fs-styleguide_heading-medium">Useful utility systems</h2>
+                    <p class="text-size-medium">Utility classes we like to use in most of our projects to build faster.<br></p>
+                  </div>
+                  <div class="fs-styleguide_item-wrapper">
+                    <div class="fs-styleguide_4-col">
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">hide</div>
+                        <div class="hide"></div>
+                        <div id="w-node-_32eadc24-e391-a089-abe0-fb5b6627cd6b-85aeb999">This element is hidden</div>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">hide-tablet</div>
+                        <main class="hide-tablet">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </main>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">hide-mobile-portrait</div>
+                        <main class="hide-mobile-portrait">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </main>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">hide-mobile-landscape</div>
+                        <main class="hide-mobile-landscape">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </main>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">overflow-visible</div>
+                        <main class="overflow-visible">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </main>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">overflow-hidden</div>
+                        <main class="overflow-hidden">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </main>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">overflow-auto</div>
+                        <main class="overflow-auto">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </main>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">overflow-scroll</div>
+                        <main class="overflow-scroll">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </main>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">pointer-events-on</div>
+                        <main class="pointer-events-on">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </main>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">pointer-events-off</div>
+                        <main class="pointer-events-off">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </main>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">layer</div>
+                        <main class="layer"></main>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">div-square</div>
+                        <main class="div-square"></main>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">spacing-clean</div>
+                        <main class="spacing-clean">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </main>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">align-center</div>
+                        <main class="align-center">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </main>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">z-index-1</div>
+                        <main class="z-index-1"></main>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">z-index-2</div>
+                        <main class="z-index-2"></main>
+                      </div>
+                      <div class="fs-styleguide_item">
+                        <div class="fs-styleguide_label">display-inlineflex</div>
+                        <main class="display-inlineflex">
+                          <div class="fs-styleguide_empty-box"></div>
+                        </main>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+    </div>
+  </div>
+  <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=645c82bc49404a7b02aeb995" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <script src="js/webflow.js" type="text/javascript"></script><!--  Update copyright year  -->
+  <script>
+// when the DOM is ready
+document.addEventListener("DOMContentLoaded", function() { 
+  // get the the span element
+  const yrSpan = document.querySelector('.copyright-year');
+  // get the current year
+  const currentYr = new Date().getFullYear();
+  // set the year span element's text to the current year
+  yrSpan.textContent = currentYr;
+});
+</script>
+  <!--  disable first dropdown option  -->
+  <script>
+  $( "#select-field option:first-child" ).attr("disabled","disabled");
+</script>
+</body>
+</html>
